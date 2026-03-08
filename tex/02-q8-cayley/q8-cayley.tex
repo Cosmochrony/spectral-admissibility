@@ -1,0 +1,21 @@
+\section{The $Q_8$ Cayley Graph}
+  \label{sec:q8-}
+
+  Let $Q_8 = \{{\pm 1, \pm i, \pm j, \pm k}\}$ denote the quaternion group of order~8.
+  We define the undirected Cayley graph $\Gamma(Q_8, S)$ with generating set
+  \begin{equation}
+    S = \{\pm i, \pm j, \pm k\}.
+  \end{equation}
+  Since $S$ is closed under inversion ($s^{-1} \in S$ for all $s \in S$) and does
+  not contain the identity, $\Gamma(Q_8, S)$ is a well-defined, connected, undirected,
+  $6$-regular graph on $8$ vertices.
+
+  \begin{remark}
+    The choice $S = \{i, j, k\}$ without inverses would yield a directed graph with an
+    asymmetric adjacency operator.
+    For a self-adjoint Laplacian, the full symmetric set
+    $S = \{\pm i, \pm j, \pm k\}$ is required.
+    The resulting graph is $6$-regular, not $3$-regular.
+  \end{remark}
+
+  \input{02-q8-cayley/001-adjacency-operator-graph-laplacian}

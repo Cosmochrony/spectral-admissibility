@@ -1,0 +1,39 @@
+\subsection{Eigenvalues of the Adjacency Operator}
+  \label{subsec:eigenvalues-of-adjacency-operator}
+
+  For any irreducible representation $\rho$, the adjacency operator acts as the
+  scalar $\mu_\rho \cdot I_{V_\rho}$ on $V_\rho$.
+  Since $S$ is a union of conjugacy classes of $Q_8$, the corresponding element
+  of the group algebra is central, and Schur's lemma gives
+  \begin{equation}
+    \mu_\rho = \frac{1}{\dim \rho} \sum_{s \in S} \chi_\rho(s),
+  \end{equation}
+  where $\chi_\rho$ is the character of $\rho$.
+
+  \paragraph{1D sectors.}
+    For the trivial representation $\rho_0$, $\chi_{\rho_0}(s) = 1$ for all
+    $s \in S$, so $\sum_{s \in S} \chi_{\rho_0}(s) = 6$ and
+    \begin{equation}
+      \mu_{\rho_0} = 6,
+      \qquad
+      \lambda_{\rho_0} = 6 - 6 = 0.
+    \end{equation}
+    For $\rho_1$, $\chi_{\rho_1}(\pm i) = 1$ and
+    $\chi_{\rho_1}(\pm j) = \chi_{\rho_1}(\pm k) = -1$,
+    so $\sum_{s \in S} \chi_{\rho_1}(s) = 2(1) + 4(-1) = -2$, giving
+    $\mu_{\rho_1} = -2$ and $\lambda_{\rho_1} = 8$.
+    By the symmetry of $Q_8$ under permutations of $\{i,j,k\}$,
+    $\mu_{\rho_2} = \mu_{\rho_3} = -2$ and
+    $\lambda_{\rho_2} = \lambda_{\rho_3} = 8$.
+
+  \paragraph{2D sector.}
+    For the quaternionic representation $\rho_4$, we compute the character at each
+    generator.
+    The matrices $\rho_4(i)$, $\rho_4(-i)$, $\rho_4(j)$, $\rho_4(-j)$,
+    $\rho_4(k)$, $\rho_4(-k)$ each have trace zero.
+    Thus $\sum_{s \in S} \chi_{\rho_4}(s) = 0$ and
+    \begin{equation}
+      \mu_{\rho_4} = 0,
+      \qquad
+      \lambda_{\rho_4} = 6.
+    \end{equation}
