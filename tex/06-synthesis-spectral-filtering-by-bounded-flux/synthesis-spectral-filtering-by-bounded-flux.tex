@@ -1,0 +1,118 @@
+\section{Synthesis: Spectral Filtering by Bounded Flux}
+  \label{sec:synthesis-spectral-filtering-by-bounded-flux}
+
+  The analysis performed in this note identifies the effective amplitude
+  \[
+    A_n = a_n \|\psi_n\|_\infty
+  \]
+  as the physically relevant variable controlling the saturation of the
+  substrate.
+
+  \subsection{Local Flux Constraint as a Spectral Filter}
+
+    The bounded-flux condition
+    \[
+      |\partial_t \chi_v| \le c_\chi
+    \]
+    acts locally on each vertex of the relational substrate.
+
+    For a single eigenmode
+    \[
+      \chi_v(t) = a_n \psi_n(v) \cos(\omega_n t),
+    \]
+    the constraint becomes
+    \[
+      |\omega_n|\,a_n\,\|\psi_n\|_\infty \le c_\chi.
+    \]
+
+    Introducing the effective amplitude
+    \[
+      A_n = a_n \|\psi_n\|_\infty
+    \]
+    yields the admissibility envelope
+    \[
+      A_n^{\max} = \frac{c_\chi}{\sqrt{\lambda_n}}.
+    \]
+
+    A key consequence is that localisation of the mode does not alter the
+    admissibility bound itself.
+    Localisation only determines how the raw amplitude $a_n$ translates into
+    a local flux impact on the substrate.
+    The selection mechanism is therefore governed by the spectral
+    eigenvalue $\lambda_n$.
+
+  \subsection{DBI Softening as Dynamical Spectral Filtering}
+
+    In the weakly non-linear regime the discrete Dirac--Born--Infeld dynamics
+    produces an amplitude-dependent frequency
+    \[
+      \omega_n^2(A_n)
+      \approx
+      \lambda_n
+      \left(
+        1 -
+        \frac{3\lambda_n A_n^2}{8c_\chi^2}
+      \right).
+    \]
+
+    This simplified expression follows from the identity
+    \[
+      \frac{\kappa_n}{\|\psi_n\|_\infty^2}=1
+    \]
+    which holds for all non-trivial sectors of the $Q_8$ Cayley graph.
+
+    The non-linear correction therefore depends only on the Laplacian
+    eigenvalue.
+    Modes with larger $\lambda_n$ undergo stronger softening as the
+    effective amplitude increases.
+
+    The relational substrate thus behaves as a dynamical low-pass spectral
+    filter.
+
+  \subsection{Conceptual Interpretation}
+
+    The mechanism uncovered in this toy model can be summarised as
+    \[
+      \text{sub\-strate capacity}
+      \;\rightarrow\;
+      \text{spectral admissibility}
+      \;\rightarrow\;
+      \text{nonlinear filtering}
+      \;\rightarrow\;
+      \text{surviving sectors}.
+    \]
+
+    On the $Q_8$ Cayley graph the smallest non-trivial eigenvalue
+    \[
+      \lambda_{\rho_4}=6
+    \]
+    belongs to the quaternionic non-abelian sector.
+    This sector therefore possesses the largest admissible amplitude window
+    and is the least affected by DBI softening.
+
+    The non-perturbative DBI reduction derived in
+    Section~\ref{subsec:nonperturbative-dbi} shows that the admissibility
+    envelope
+    \[
+      A_n^{\max} = \frac{c_\chi}{\sqrt{\lambda_n}}
+    \]
+    is not merely a linear approximation.
+    It coincides with the exact saturation boundary of the one-mode
+    DBI dynamics on the $Q_8$ Cayley graph.
+
+    The bounded relational capacity of the substrate therefore acts
+    not merely as a spectral cut-off but as a dynamical selector,
+    favouring the most resilient spectral sectors.
+
+  \subsection{Beyond the $Q_8$ Toy Model}
+
+    The identity
+    \[
+      \frac{\kappa_n}{\|\psi_n\|_\infty^2}=1
+    \]
+    is a special feature of the small and highly symmetric $Q_8$ graph.
+
+    On larger graphs this ratio will generally depend on the structure of
+    the eigenmodes.
+    The non-linear DBI correction may therefore amplify the spectral
+    selection mechanism rather than acting uniformly across sectors.
