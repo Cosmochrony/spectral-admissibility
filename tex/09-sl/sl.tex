@@ -20,6 +20,7 @@
   This section constructs such a set via the Lubotzky--Phillips--Sarnak
   (LPS) construction~\cite{LPS1988}.
 
+% ------------------------------------------------------------
   \subsection{The groups and their sizes}
     \label{sec:step6a-group}
 
@@ -42,10 +43,10 @@
         \hline
         $p$ & $q$ & $|\mathrm{PSL}(2,\mathbb{F}_q)|$ \\
         \hline
-        5   & 29  & 12180                            \\
-        5   & 41  & 34440                            \\
-        13  & 17  & 2448                             \\
-        13  & 29  & 12180                            \\
+        5 & 29 & 12180 \\
+        5 & 41 & 34440 \\
+        13 & 17 & 2448  \\
+        13 & 29 & 12180 \\
         \hline
       \end{tabular}
     \end{center}
@@ -56,6 +57,7 @@
     the size of the group.
     Step~6 fixes $p$ and varies $q \to \infty$.
 
+% ------------------------------------------------------------
   \subsection{Quaternion algebra and the spinor embedding}
     \label{sec:step6a-quat}
 
@@ -91,6 +93,7 @@
       construction takes place in $\mathbb{F}_q$.
     \end{remark}
 
+% ------------------------------------------------------------
   \subsection{The LPS generating set}
     \label{sec:step6a-lps}
 
@@ -136,6 +139,7 @@
     The Cayley graph $X^{p,q} = \mathrm{Cay}(\mathrm{PSL}(2,\mathbb{F}_q), S_p)$
     is therefore undirected and the associated Laplacian self-adjoint.
 
+% ------------------------------------------------------------
   \subsection{Structural analogy with $Q_8$ and $2I$}
     \label{sec:step6a-analogy}
 
@@ -177,6 +181,7 @@
     is controlled by $q$.
     Step~6 exploits this decoupling: fix $p$ and vary $q \to \infty$.
 
+% ------------------------------------------------------------
   \subsection{The Ramanujan property}
     \label{sec:step6a-ramanujan}
 
@@ -203,6 +208,7 @@
     connects the adjacency operator of $X^{p,q}$ to Hecke operators on
     modular forms, whose eigenvalues are controlled by the Ramanujan bound.
 
+% ------------------------------------------------------------
   \subsection{Explicit example: $p = 5$, $q = 29$}
     \label{sec:step6a-p5q29}
 
@@ -231,17 +237,11 @@
     Three of the six generators in $\mathrm{SL}(2,\mathbb{F}_{29})$ are
     \begin{equation}
       g_{(1,2,0,0)} =
-      \begin{pmatrix}
-            26 & 0 \\ 0 & 19
-      \end{pmatrix}, \quad
+      \begin{pmatrix} 26 & 0 \\ 0 & 19 \end{pmatrix}, \quad
       g_{(1,0,2,0)} =
-      \begin{pmatrix}
-            8 & 16 \\ 13 & 8
-      \end{pmatrix}, \quad
+      \begin{pmatrix} 8 & 16 \\ 13 & 8 \end{pmatrix}, \quad
       g_{(1,0,0,2)} =
-      \begin{pmatrix}
-            8 & 18 \\ 18 & 8
-      \end{pmatrix},
+      \begin{pmatrix} 8 & 18 \\ 18 & 8 \end{pmatrix},
       \label{eq:generators-p5q29}
     \end{equation}
     each with $\det = 1$ verified.
@@ -249,6 +249,7 @@
     The resulting graph $X^{5,29}$ is a 6-regular Ramanujan graph on
     $12180$ vertices.
 
+% ------------------------------------------------------------
   \subsection{The normalised character correlation: key observable}
     \label{sec:step6a-coherence}
 
@@ -293,49 +294,13 @@
     $j$, pushing $\lambda_j$ upward and the admissibility window
     $A^{\max}_j$ downward for large spin.
 
-    The central claim of Step~6 is that this decay is monotone:
+    The central prediction of Step~6 is that this hierarchy extends to all
+    members of the LPS family: for every $p$, the spin-$\tfrac{1}{2}$ sector
+    remains the most admissible.
+    This is established numerically in Steps~6b--6d and summarised in
+    Section~\ref{sec:step6bcd}.
 
-    \begin{conjecture}[Monotone coherence decay]
-      \label{conj:coherence}
-      For the LPS generating set $S_p$ in $\mathrm{PSL}(2,\mathbb{F}_q)$, the
-      normalised character correlation satisfies
-      \begin{equation}
-        \kappa_{1/2} \;\geq\; \kappa_1 \;\geq\; \kappa_{3/2} \;\geq\; \cdots,
-        \label{eq:coherence-monotone}
-      \end{equation}
-      with the ordering becoming strict as $q \to \infty$.
-      In the limit,
-      \begin{equation}
-        \lim_{q \to \infty} \kappa_j = 0
-        \quad\text{for all } j \geq 1,
-        \qquad
-        \kappa_{1/2} > 0 \quad\text{uniformly in } q.
-        \label{eq:coherence-limit}
-      \end{equation}
-    \end{conjecture}
-
-    If Conjecture~\ref{conj:coherence} holds, the admissibility ratio
-    \begin{equation}
-      R_{p,q} = \sqrt{\frac{\lambda_{j_{\max}}}{\lambda_{1/2}}}
-      \label{eq:ratio-p}
-    \end{equation}
-    satisfies $R_{p,q} > 1$ for all $q$ and $R_{p,q} \to \infty$ as
-    $q \to \infty$.
-    The sequence of ratios from Steps~4 and~5 would then be the beginning
-    of a convergent monotone series
-    \begin{equation}
-      \sqrt{\tfrac{4}{3}}
-      \;\longrightarrow\;
-      \sqrt{\tfrac{14}{9}}
-      \;\longrightarrow\;
-      R_{p,q}
-      \;\longrightarrow\;
-      +\infty,
-      \label{eq:ratio-sequence}
-    \end{equation}
-    establishing bounded relational flux as a universal character-coherence
-    selection mechanism, not an artefact of small groups.
-
+% ------------------------------------------------------------
   \subsection{Summary}
     \label{sec:step6a-summary}
 

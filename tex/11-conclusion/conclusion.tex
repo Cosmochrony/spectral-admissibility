@@ -1,0 +1,121 @@
+\section{Conclusion}
+  \label{sec:conclusion}
+
+  This note has carried out the spectral admissibility programme on the
+  inclusion chain
+  \begin{equation}
+    Q_8 \;\subset\; 2I \;\subset\; \mathrm{PSL}(2,\mathbb{F}_q)
+    \;\xrightarrow{\;p,q\to\infty\;}
+    \mathrm{SU}(2),
+    \label{eq:chain-conclusion}
+  \end{equation}
+  producing four families of results at progressively larger scales.
+
+  \paragraph{Steps~1--3 ($Q_8$).}
+    On the Cayley graph $\Gamma(Q_8, \{\pm i, \pm j, \pm k\})$, the
+    bounded-flux constraint $|\partial_t\chi_v| \leq c_\chi$ induces the
+    admissibility envelope $A^{\max}_n = c_\chi/\sqrt{\lambda_n}$.
+    The quaternionic non-abelian sector $\rho_4$ carries the smallest
+    non-trivial eigenvalue $\lambda_{\rho_4} = 6$, giving it the largest
+    admissibility window by a factor of $\sqrt{4/3} \approx 1.155$ over the
+    abelian sectors ($\lambda = 8$).
+    This hierarchy is exact, non-perturbative, and confirmed by the exact
+    one-mode DBI analysis.
+
+  \paragraph{Step~4 (algebraic origin).}
+    The factor $\sqrt{4/3}$ is not accidental.
+    It originates in the Pauli tracelessness identity
+    $\chi_{\rho_4}(s) = 0$ for all $s \in S$, which forces $\mu_{\rho_4} = 0$
+    and places the quaternionic sector at the centre of the adjacency spectrum.
+    This is a structural consequence of the embedding $Q_8 \hookrightarrow
+\mathrm{SU}(2)$, not a numerical coincidence.
+
+  \paragraph{Step~5 ($2I$).}
+    On the Cayley graph of the binary icosahedral group with generating set
+    $S = 10a \cup 10b$, the hierarchy resolves into a four-level spin tower:
+    \begin{equation}
+      \lambda_{1/2} = \lambda_{3/2} = 18
+      \;<\; \lambda_1 = 20
+      \;<\; \lambda_2 = 24
+      \;<\; \lambda_{5/2} = 28.
+      \label{eq:2I-ordering-concl}
+    \end{equation}
+    The admissibility contrast increases to $\sqrt{14/9} \approx 1.247$, and
+    its algebraic origin is the golden-ratio identity
+    $\varphi - 1/\varphi = 1$.
+    Both the Q8 and 2I results are instances of the same mechanism:
+    the generating set $S$ is positively correlated with the low-spin
+    representations in character, giving $\mu_{\text{low}} > \mu_{\text{high}}$
+    and hence $\lambda_{\text{low}} < \lambda_{\text{high}}$.
+
+  \paragraph{Steps~6a--6d (LPS family).}
+    The Lubotzky--Phillips--Sarnak construction provides, for every prime
+    $p \equiv 1 \pmod 4$, an explicit symmetric generating set $S_p \subset
+\mathrm{PSL}(2,\mathbb{F}_q)$ of cardinality $p+1$ defined by the
+    four-square decomposition of $p$.
+    The resulting Cayley graphs $X^{p,q}$ are Ramanujan, and their spectral
+    measure converges to the $S^3$ Laplacian as $q \to \infty$.
+
+    The character computation in the $\mathrm{SU}(2)$ limit shows that the
+    spin-$\tfrac{1}{2}$ sector retains the smallest non-trivial Laplacian
+    eigenvalue for every prime $p$ examined, establishing the hierarchy
+    \begin{equation}
+      \lambda_{1/2} < \lambda_j \quad \forall\, j > \tfrac{1}{2}
+      \label{eq:lps-hierarchy-concl}
+    \end{equation}
+    as a persistent structural feature of the LPS generating mechanism.
+    The admissibility ratio satisfies
+    \begin{equation}
+      1 \;<\; R_p \;\leq\; \frac{\sqrt{p}+1}{\sqrt{p}-1}
+      \;\xrightarrow{p\to\infty}\; 1,
+      \label{eq:Rp-concl}
+    \end{equation}
+    where the upper bound is the Ramanujan constraint and the lower bound
+    reflects Proposition~\ref{prop:lps-hierarchy}.
+
+  \paragraph{The full sequence.}
+    The admissibility ratio evolves along the chain as
+    \begin{equation}
+      \underbrace{\sqrt{\tfrac{4}{3}}}_{\displaystyle Q_8}
+      \;\longrightarrow\;
+      \underbrace{\sqrt{\tfrac{14}{9}}}_{\displaystyle 2I}
+      \;\longrightarrow\;
+      \underbrace{R_p \in (1,\,(\sqrt{p}+1)/(\sqrt{p}-1))}_{\displaystyle
+      \mathrm{LPS}}
+      \;\longrightarrow\;
+      1,
+      \label{eq:ratio-sequence-concl}
+    \end{equation}
+    where the final value $1$ corresponds to the continuous $S^3$ geometry.
+
+  \paragraph{Interpretation.}
+    The sequence~\eqref{eq:ratio-sequence-concl} has a precise physical
+    reading: the bounded-flux filter is strongest for the smallest,
+    most discrete substrates, and weakens as the substrate grows toward the
+    $\mathrm{SU}(2)$ continuum.
+    In the limit, the full rotational symmetry of $S^3$ is restored and
+    every spin sector becomes equally admissible.
+    The discrete hierarchy is not a defect of the finite approximations
+    but a genuine structural feature of bounded relational capacity at
+    finite resolution.
+
+    The algebraic origin of the hierarchy is uniform across the chain.
+    At every level, the generating set $S$ has higher character coherence
+    with the low-spin representations than with the high-spin ones.
+    This coherence, measured by $\kappa_j = \mu_j/(p+1)$, is the
+    fundamental observable driving the admissibility selection.
+
+  \paragraph{Summary.}
+    The analysis demonstrates that, on every Cayley graph in the chain
+    $Q_8 \subset 2I \subset \mathrm{PSL}(2,\mathbb{F}_q)$,
+    the local bounded-flux constraint selects the spin-$\tfrac{1}{2}$ sector
+    as the most admissible.
+    This selection is purely spectral: it requires no additional dynamical
+    principle beyond the constraint itself and the algebraic structure of the
+    generating set.
+    The mechanism survives the non-linear DBI correction on $Q_8$, persists
+    through the explicit spin tower of $2I$, and extends to the full LPS family
+    approaching $\mathrm{SU}(2)$.
+    It constitutes a minimal but complete demonstration that bounded
+    relational capacity can favour low-spin non-abelian sectors through
+    spectral admissibility alone.
