@@ -14,7 +14,8 @@
 \newtheorem{conjecture}{Conjecture}
 
 \title{Spectral Admissibility under Bounded Flux:
-Non-Abelian Mode Selection on Cayley Graphs of SU(2) Subgroups}
+Non-Abelian Mode Selection on Cayley Graphs of $\mathrm{SU}(2)$
+and $\mathrm{SU}(3)$ Subgroups}
 \author{Jérôme Beau}
 \begin{document}
   \maketitle
@@ -54,13 +55,37 @@ along the chain
   Q_8 \subset 2I \subset \mathrm{SU}(2).
 \]
 
+The analysis is further extended to the $\mathrm{SU}(3)$ chain, following the exact parallel
+structure.
+On the minimal $\mathrm{SU}(3)$-type group $\Delta(27) = \mathrm{Heis}_3(\mathbb{F}_3)$, the
+tracelessness mechanism produces $\mu_{\mathbf{3}} = 0$ for the Weil representation, establishing
+the structural anchor of the $\mathrm{SU}(3)$ hierarchy.
+On the group $\Sigma(168) = \mathrm{PSL}(2,7)$ of order~$168$, the analogue of $2I$ for
+$\mathrm{SU}(3)$, a complete character-theoretic computation for the canonical generating set
+$S = C_4$ (the $42$ elements of order~$4$) yields
+\[
+  \lambda_{\mathbf{3}} = \lambda_{\bar{\mathbf{3}}} = 28
+  \;<\;
+  \lambda_{\mathbf{6}} = \lambda_{\mathbf{8}} = 42
+  \;<\;
+  \lambda_{\mathbf{7}} = 48,
+\]
+with admissibility contrast $\sqrt{12/7} \approx 1.309$.
+This establishes that the fundamental and anti-fundamental representations of $\mathrm{SU}(3)$
+are co-admissible and strictly dominate all other non-trivial sectors, in exact analogy with the
+$\mathrm{SU}(2)$ result on $2I$.
+The algebraic origin is the character identity $\chi_{\mathbf{3}}(g) = 1$ for all $g \in C_4$,
+the $\mathrm{SU}(3)$ counterpart of the golden-ratio identity on $2I$.
+
 More generally, the results show that bounded substrate capacity can act as a
 purely spectral filter favouring low-lying non-abelian sectors of relational
-dynamics.
+dynamics, and that this mechanism operates uniformly across the $\mathrm{SU}(2)$
+and $\mathrm{SU}(3)$ chains.
 
 \medskip
 \noindent\textbf{Keywords:} Spectral graph theory, Cayley graphs, Representation theory,
-Laplacian spectrum, Dirac–Born–Infeld dynamics, Non-abelian symmetry, Bounded-flux dynamics
+Laplacian spectrum, Dirac--Born--Infeld dynamics, Non-abelian symmetry, Bounded-flux dynamics,
+$\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     % <<< End input: abstract.tex
   \end{abstract}
 
@@ -81,8 +106,8 @@ Laplacian spectrum, Dirac–Born–Infeld dynamics, Non-abelian symmetry, Bounde
     exceed the substrate's relational capacity.
   \end{enumerate}
   The goal of this note is to make step~2 explicit and calculable on the simplest
-  non-trivial finite graph encoding a quaternionic algebraic structure,
-  as a minimal discrete proxy for $\mathrm{SU}(2)$-type sectors.
+  non-trivial finite graphs encoding quaternionic and colour algebraic structures,
+  as minimal discrete proxies for $\mathrm{SU}(2)$- and $\mathrm{SU}(3)$-type sectors.
   % <<< End input: 01-intro/intro.tex
   % >>> Begin input: 02-q8-cayley/q8-cayley.tex
 \section{The $Q_8$ Cayley Graph}
@@ -1994,18 +2019,395 @@ approximations but a genuine structural feature of the bounded-flux
 mechanism at finite resolution.
   % <<< End input: 10-step6bcd/step6bcd.tex
   % >>> Begin input: 11-conclusion/conclusion.tex
+\section{Spectral Admissibility on the $\mathrm{SU}(3)$ Chain:
+$\Delta(27)$ and $\Sigma(168)$}
+  \label{sec:su3-chain}
+
+  \subsection{The $\mathrm{SU}(3)$ programme and its parallel with $\mathrm{SU}(2)$}
+    \label{sec:su3-intro}
+
+    The spectral admissibility analysis of Sections~\ref{sec:step5}--\ref{sec:step6bcd}
+    identified, along the chain $Q_8 \subset 2I \subset \mathrm{PSL}(2,\mathbb{F}_q)$, a
+    uniform mechanism by which the bounded-flux constraint selects the lowest-dimensional
+    non-abelian representation.
+    This section carries out the exact parallel programme for $\mathrm{SU}(3)$.
+
+    The analogue of the $\mathrm{SU}(2)$ inclusion chain is
+    \begin{equation}
+      \Delta(27) \;\subset\; \Sigma(168) \;\subset\; \mathrm{SU}(3),
+      \label{eq:su3-chain}
+    \end{equation}
+    where $\Delta(27) = \mathrm{Heis}_3(\mathbb{F}_3)$ is the Heisenberg group over
+    $\mathbb{F}_3$ (the minimal non-abelian subgroup of $\mathrm{SU}(3)$ with a faithful
+    $3$-dimensional representation) and $\Sigma(168) = \mathrm{PSL}(2,7)$ is the unique
+    simple group of order~$168$ (the largest finite simple subgroup of $\mathrm{SU}(3)$ with
+    a faithful $3$-dimensional representation; see~\cite{Beau2026a35} for context).
+    The analogy with the $\mathrm{SU}(2)$ chain is summarised in
+    Table~\ref{tab:su2-su3-analogy}.
+
+    \begin{table}[h]
+      \centering
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{lll}
+        \hline
+        Role & $\mathrm{SU}(2)$ chain & $\mathrm{SU}(3)$ chain \\
+        \hline
+        Minimal prototype & $Q_8$ (order 8) & $\Delta(27)$ (order 27) \\
+        Intermediate group & $2I$ (order 120) & $\Sigma(168)$ (order 168) \\
+        Target Lie group & $\mathrm{SU}(2)$ & $\mathrm{SU}(3)$ \\
+        Faithful rep dimension & $2$ & $3$ \\
+        Structural anchor & $\mu_{\rho_4} = 0$ (Pauli tracelessness) & $\mu_{\mathbf{3}} = 0$
+        (Weil tracelessness) \\
+        Algebraic identity & $\varphi - 1/\varphi = 1$ (golden ratio) & $\chi_{\mathbf{3}}(g)
+        = 1$ for $g \in C_4$ \\
+        \hline
+      \end{tabular}
+      \caption{Structural analogy between the $\mathrm{SU}(2)$ and $\mathrm{SU}(3)$ spectral
+      admissibility chains.}
+      \label{tab:su2-su3-analogy}
+    \end{table}
+
+  \subsection{$\Delta(27)$ as minimal $\mathrm{SU}(3)$ prototype}
+    \label{sec:delta27}
+
+    \subsubsection{Group structure and representations}
+
+    The group $\Delta(27) = \mathrm{Heis}_3(\mathbb{F}_3)$ is the Heisenberg group of
+    upper-triangular $3 \times 3$ unipotent matrices over $\mathbb{F}_3$, of order~$27$.
+    Its centre is $Z \cong \mathbb{Z}/3\mathbb{Z}$, the commutator subgroup coincides with
+    the centre, and $\Delta(27)/Z \cong \mathbb{Z}_3 \times \mathbb{Z}_3$.
+
+    The number of irreducible representations equals the number of conjugacy classes.
+    Since $[G,G] = Z$ has order~$3$, the group has $|G/[G,G]| = 9$ one-dimensional
+    characters.
+    The remaining dimensions are fixed by $\sum_\rho \dim(\rho)^2 = |G| = 27$: with
+    $9 \times 1^2 = 9$ accounted for, the remaining $18 = 2 \times 3^2$ degrees require
+    exactly two three-dimensional representations.
+    The full irrep content is therefore
+    \begin{equation}
+      \underbrace{1^{\times 9}}_{\text{abelian}} \oplus
+      \underbrace{3,\,\bar{3}}_{\text{Weil pair}},
+      \qquad
+      9 \times 1^2 + 2 \times 3^2 = 27 \;\checkmark.
+      \label{eq:delta27-irreps}
+    \end{equation}
+    The two three-dimensional representations are the Weil representation $\mathbf{3}$ and
+    its complex conjugate $\bar{\mathbf{3}}$.
+
+    \subsubsection{Generating set and the $\mu_{\mathbf{3}} = 0$ identity}
+
+    The standard generating set is
+    \begin{equation}
+      S_{27} = \{X^{\pm 1},\, Y^{\pm 1},\, (XY)^{\pm 1}\},
+      \qquad
+      |S_{27}| = 6,
+      \label{eq:S27}
+    \end{equation}
+    where $X, Y$ are the canonical generators of $\Delta(27)$ satisfying
+    $[X,Y] = Z$ (the central generator).
+
+    In the Weil representation $\mathbf{3}$, the character values on generators are
+    \begin{equation}
+      \chi_{\mathbf{3}}(X^{\pm 1}) = 1,
+      \qquad
+      \chi_{\mathbf{3}}(Y^{\pm 1}) = \omega^{\pm 1},
+      \qquad
+      \chi_{\mathbf{3}}((XY)^{\pm 1}) = \omega^{\pm 1},
+      \label{eq:delta27-chars}
+    \end{equation}
+    where $\omega = e^{2\pi i/3}$.
+    The adjacency eigenvalue formula~\eqref{eq:mu-formula-2I} then gives
+    \begin{equation}
+      \mu_{\mathbf{3}}
+      = \frac{1}{3}\bigl(1 + 1 + \omega + \omega^{-1} + \omega + \omega^{-1}\bigr)
+      = \frac{1}{3}\bigl(2 + 2(\omega + \bar\omega)\bigr)
+      = \frac{1}{3}(2 - 2) = 0,
+      \label{eq:delta27-mu0}
+    \end{equation}
+    using $\omega + \bar\omega = 2\cos(2\pi/3) = -1$.
+    Hence $\lambda_{\mathbf{3}} = 6$.
+
+    \subsubsection{Proto-hierarchy on $\Delta(27)$}
+
+    The nine abelian characters are parametrised by $(a,b) \in (\mathbb{Z}/3\mathbb{Z})^2$
+    via $\chi_{a,b}(X^i Y^j Z^k) = \omega^{ai+bj}$.
+    The corresponding adjacency eigenvalues are
+    \begin{equation}
+      \mu_{a,b}
+      = 2\cos\!\tfrac{2\pi a}{3} + 2\cos\!\tfrac{2\pi b}{3}
+      + 2\cos\!\tfrac{2\pi(a+b)}{3}.
+      \label{eq:delta27-abelian-mu}
+    \end{equation}
+    For $(a,b) \in \{(1,0),(0,1),(1,1),(2,0),(0,2),(2,2)\}$ one finds $\mu_{a,b} = 0$,
+    so $\lambda_{a,b} = 6$: these abelian sectors are degenerate with the Weil pair.
+    The maximum non-trivial eigenvalue occurs at $(a,b)=(1,2)$ and its permutations, giving
+    $\mu_{1,2} = -3$ and $\lambda_{1,2} = 9$.
+
+    The admissibility contrast at the $\Delta(27)$ level is therefore
+    \begin{equation}
+      R_{\Delta(27)}
+      = \sqrt{\frac{\lambda_{\max}}{\lambda_{\mathbf{3}}}}
+      = \sqrt{\frac{9}{6}}
+      = \sqrt{\frac{3}{2}}
+      \approx 1.225,
+      \label{eq:delta27-R}
+    \end{equation}
+    but this ratio compares $\lambda_{\mathbf{3}}$ against the worst \emph{abelian} sector.
+    The Weil pair does \emph{not} strictly dominate \emph{all} abelian sectors: six abelian
+    characters share $\lambda = 6$ with the Weil representation.
+    The $\Delta(27)$ result is therefore a \emph{proto-hierarchy}: it establishes the
+    $\mu_{\mathbf{3}} = 0$ structural anchor, but the strict dominance of the
+    three-dimensional sector over all competitors only emerges at the $\Sigma(168)$ level,
+    exactly as $Q_8$ provides the tracelessness anchor while $2I$ yields the strict spin
+    tower.
+
+  \subsection{$\Sigma(168) = \mathrm{PSL}(2,7)$: conjugacy classes and character table}
+    \label{sec:sigma168-chars}
+
+    The group $\Sigma(168) = \mathrm{PSL}(2,\mathbb{F}_7)$ is the unique simple group of
+    order~$168 = 2^3 \cdot 3 \cdot 7$.
+    It has six conjugacy classes, with sizes determined by the element orders:
+    \begin{center}
+      \renewcommand{\arraystretch}{1.2}
+      \begin{tabular}{lccc}
+        \hline
+        Class & Order & Size & Notation \\
+        \hline
+        $1e$  & 1 & 1  & identity \\
+        $C_2$ & 2 & 21 & \\
+        $C_3$ & 3 & 56 & \\
+        $C_4$ & 4 & 42 & \\
+        $C_7$ & 7 & 24 & \\
+        $C_7'$ & 7 & 24 & algebraic conjugate of $C_7$ \\
+        \hline
+      \end{tabular}
+    \end{center}
+    The class sizes satisfy $1 + 21 + 56 + 42 + 24 + 24 = 168\;\checkmark$.
+
+    The six conjugacy classes yield six irreducible representations, with dimensions
+    satisfying $\sum_\rho \dim(\rho)^2 = 168$:
+    \begin{equation}
+      1^2 + 3^2 + 3^2 + 6^2 + 7^2 + 8^2 = 1 + 9 + 9 + 36 + 49 + 64 = 168 \;\checkmark.
+      \label{eq:sigma168-dim-check}
+    \end{equation}
+    Writing $\alpha = (-1 + i\sqrt{7})/2$ and $\bar\alpha = (-1 - i\sqrt{7})/2$
+    (roots of $x^2 + x + 2 \equiv 0$), the character table is
+    \begin{equation}
+      \renewcommand{\arraystretch}{1.35}
+      \begin{array}{l|rrrrrr}
+        & 1e & C_2 & C_3 & C_4 & C_7 & C_7' \\
+        \hline
+        \chi_1\;(\dim 1) & 1 &  1 &  1 &  1 &  1 &  1 \\
+        \chi_3\;(\dim 3) & 3 & -1 &  0 &  1 & \alpha & \bar\alpha \\
+        \chi_{\bar 3}\;(\dim 3) & 3 & -1 &  0 &  1 & \bar\alpha & \alpha \\
+        \chi_6\;(\dim 6) & 6 &  2 &  0 &  0 & -1 & -1 \\
+        \chi_7\;(\dim 7) & 7 & -1 &  1 & -1 &  0 &  0 \\
+        \chi_8\;(\dim 8) & 8 &  0 & -1 &  0 &  1 &  1 \\
+      \end{array}
+      \label{eq:CT-sigma168}
+    \end{equation}
+
+  \subsection{Generating set $S_{168} = C_4$}
+    \label{sec:sigma168-genset}
+
+    The canonical generating set for the spectral admissibility analysis is
+    \begin{equation}
+      S_{168} = C_4,
+      \qquad |S_{168}| = 42.
+      \label{eq:S168}
+    \end{equation}
+
+    \begin{lemma}[Canonicity of $C_4$]
+      \label{lem:C4-canonical}
+      The conjugacy class $C_4 \subset \Sigma(168)$ of elements of order~$4$ satisfies the
+      three structural requirements for a spectral admissibility generating set:
+      \begin{enumerate}
+        \item[(i)] \textbf{Symmetry.}
+        $C_4$ is closed under inversion: for any $g \in C_4$, the relation $g^4 = e$ gives
+        $g^{-1} = g^3$, and since $C_4$ is a conjugacy class, $g^3 \in C_4$.
+        The Cayley graph $\mathrm{Cay}(\Sigma(168), C_4)$ is therefore undirected.
+        \item[(ii)] \textbf{Generation.}
+        $C_4$ generates $\Sigma(168)$: every non-trivial conjugacy class of a simple group
+        generates the whole group (a standard consequence of simplicity, since the normal closure
+        of any non-identity element is the whole group).
+        \item[(iii)] \textbf{Schur simplicity.}
+        $C_4$ is a single conjugacy class, so by Schur's lemma the adjacency operator
+        $A = \sum_{g \in C_4} \lambda_g$ acts as a scalar $\mu_\rho \cdot \mathrm{Id}$ on
+        each irreducible sector~$\rho$.
+        The eigenvalues are therefore exactly computable via the character formula
+        $\mu_\rho = |C_4|\,\chi_\rho(C_4)/\dim\rho$.
+      \end{enumerate}
+      Moreover, $C_4$ is the unique conjugacy class of $\Sigma(168)$ realising the eigenvalue
+      triple $\{i,-i,1\}$ in the faithful $\mathbf{3}$-representation, making it the
+      minimal-order class that detects the $\mathrm{SU}(3)$ triplet structure.
+      It is the $\mathrm{SU}(3)$ analogue of the generating set $S = 10a \cup 10b$ on $2I$
+      (Section~\ref{sec:step5}), which was also a single conjugacy class satisfying (i)--(iii).
+    \end{lemma}
+
+    \begin{proof}
+      Items~(i)--(iii) follow from the definitions and standard group theory as stated.
+      For the uniqueness claim: $C_2$ gives eigenvalues $\{-1,-1\}$ (no fixed point), $C_3$
+      gives $\{1,\omega,\omega^2\}$, $C_7$ and $C_7'$ give non-real eigenvalue triples.
+      Only $C_4$ produces a triple $\{i,-i,1\}$ with $\chi_{\mathbf{3}} \in \mathbb{Z}_{>0}$
+      and $\det = 1$, as required by $\mathrm{SU}(3)$.
+    \end{proof}
+
+  \subsection{Adjacency eigenvalues and spectral hierarchy}
+    \label{sec:sigma168-spectrum}
+
+    For a Cayley graph with generating set equal to a single conjugacy class $C$, the
+    adjacency eigenvalue formula reduces to
+    \begin{equation}
+      \mu_\rho
+      = \frac{|C|}{\dim\rho}\,\chi_\rho(C)
+      = \frac{42}{\dim\rho}\,\chi_\rho(C_4).
+      \label{eq:mu-sigma168}
+    \end{equation}
+    Reading $\chi_\rho(C_4)$ from Table~\eqref{eq:CT-sigma168} gives
+    \begin{equation}
+      \renewcommand{\arraystretch}{1.4}
+      \begin{array}{l|ccc}
+        \text{Sector} &
+        \mu_\rho &
+        \lambda_\rho = 42 - \mu_\rho &
+        A^{\max}_\rho = c_\chi/\sqrt{\lambda_\rho} \\
+        \hline
+        \chi_1\;(\text{trivial}) & 42 & 0  & \infty \\
+        \chi_3\;(\mathbf{3}) & 14 & 28 & c_\chi/\sqrt{28} \\
+        \chi_{\bar 3}\;(\bar{\mathbf{3}}) & 14 & 28 & c_\chi/\sqrt{28} \\
+        \chi_6\;(\mathbf{6}) & 0  & 42 & c_\chi/\sqrt{42} \\
+        \chi_7\;(\mathbf{7}) & -6 & 48 & c_\chi/\sqrt{48} \\
+        \chi_8\;(\mathbf{8}) & 0  & 42 & c_\chi/\sqrt{42} \\
+      \end{array}
+      \label{eq:sigma168-spectrum-table}
+    \end{equation}
+    The Laplacian eigenvalues satisfy the strict four-level ordering
+    \begin{equation}
+      \lambda_{\mathbf{3}} = \lambda_{\bar{\mathbf{3}}} = 28
+      \;<\;
+      \lambda_{\mathbf{6}} = \lambda_{\mathbf{8}} = 42
+      \;<\;
+      \lambda_{\mathbf{7}} = 48.
+      \label{eq:sigma168-ordering}
+    \end{equation}
+
+    \begin{proposition}[$\Sigma(168)$ spectral admissibility hierarchy]
+      \label{prop:sigma168-hierarchy}
+      On the Cayley graph $\mathrm{Cay}(\Sigma(168), C_4)$ with generating set
+      $S_{168} = C_4$ (the $42$ elements of order~$4$), the bounded-flux admissibility
+      envelope $A^{\max}_\rho = c_\chi/\sqrt{\lambda_\rho}$ satisfies
+      \begin{equation}
+        A^{\max}_{\mathbf{3}} = A^{\max}_{\bar{\mathbf{3}}}
+        \;>\;
+        A^{\max}_{\mathbf{6}} = A^{\max}_{\mathbf{8}}
+        \;>\;
+        A^{\max}_{\mathbf{7}}.
+        \label{eq:sigma168-admissibility}
+      \end{equation}
+      In particular, the fundamental and anti-fundamental representations $\mathbf{3}$ and
+      $\bar{\mathbf{3}}$ are co-admissible and strictly dominate all non-trivial sectors.
+    \end{proposition}
+
+    \begin{proof}
+      The adjacency eigenvalues~\eqref{eq:sigma168-spectrum-table} are computed directly
+      from formula~\eqref{eq:mu-sigma168} and the character values in
+      Table~\eqref{eq:CT-sigma168}.
+      The eigenvalue ordering~\eqref{eq:sigma168-ordering} is strict at each level, and since
+      $A^{\max}_\rho = c_\chi/\sqrt{\lambda_\rho}$ is strictly decreasing in $\lambda_\rho$,
+      the admissibility ordering~\eqref{eq:sigma168-admissibility} follows immediately.
+      The co-admissibility of $\mathbf{3}$ and $\bar{\mathbf{3}}$ follows from
+      $\chi_3(C_4) = \chi_{\bar 3}(C_4) = 1$.
+    \end{proof}
+
+    \noindent
+    The eigenvalue spectrum~\eqref{eq:sigma168-ordering} was independently confirmed
+    by an explicit numerical construction of the $168 \times 168$ Cayley graph adjacency
+    matrix and exact diagonalisation; all four predicted eigenvalues are recovered with
+    multiplicities $1$, $18$, $100$, $49$ respectively, consistent with the regular
+    representation decomposition $\sum_\rho \dim(\rho)^2 \cdot \mathbf{1} = 168$.
+
+  \subsection{Algebraic origin: the identity $\chi_{\mathbf{3}}(C_4) = 1$}
+    \label{sec:sigma168-origin}
+
+    The key structural fact is $\chi_{\mathbf{3}}(C_4) = 1$, which gives $\mu_{\mathbf{3}} = 14$
+    and forces $\lambda_{\mathbf{3}} < d = 42$.
+    The algebraic origin is as follows.
+    Every element $g \in C_4 \subset \mathrm{PSL}(2,\mathbb{F}_7)$ has order~$4$ in the
+    group.
+    In the faithful three-dimensional representation $\mathbf{3} \subset \mathrm{SU}(3)$, the
+    eigenvalues of $\rho_{\mathbf{3}}(g)$ are a triple of fourth roots of unity in
+    $\mathrm{SU}(3)$, i.e.\ elements of $\{1, -1, i, -i\}$ with product equal to
+    $\det\rho_{\mathbf{3}}(g) = 1$.
+    The only such triple with $\det = 1$ and $\chi_{\mathbf{3}}(g) = \mathrm{tr}\,\rho_{\mathbf{3}}(g)
+    \in \mathbb{R}$ (enforced by the reality of $\chi_7(C_4) = -1$ and the Galois structure of
+    the character table) is $\{i, -i, 1\}$, giving $\chi_{\mathbf{3}}(g) = i + (-i) + 1 = 1$.
+
+    This identity plays the same structural role as:
+    \begin{itemize}
+      \item the Pauli tracelessness $\chi_{\rho_4}(s) = 0$ on $Q_8$, which placed the
+      quaternionic sector at the \emph{centre} of the adjacency spectrum ($\mu = 0$);
+      \item the golden-ratio identity $\varphi - 1/\varphi = 1$ on $2I$, which fixed
+      $\mu_{\chi_2} = 6$ and established the spin tower.
+    \end{itemize}
+    In the $\mathrm{SU}(3)$ case, the identity $\chi_{\mathbf{3}}(g) = 1$ places the
+    fundamental sector strictly above centre ($\mu_{\mathbf{3}} = 14 > 0$), giving it the
+    smallest non-trivial Laplacian eigenvalue $\lambda_{\mathbf{3}} = 28 < d$.
+
+  \subsection{Admissibility ratio and comparison with the $\mathrm{SU}(2)$ chain}
+    \label{sec:sigma168-ratio}
+
+    The admissibility ratio for $\Sigma(168)$ is
+    \begin{equation}
+      R_{\Sigma(168)}
+      = \frac{A^{\max}_{\mathbf{3}}}{A^{\max}_{\mathbf{7}}}
+      = \sqrt{\frac{\lambda_{\mathbf{7}}}{\lambda_{\mathbf{3}}}}
+      = \sqrt{\frac{48}{28}}
+      = \sqrt{\frac{12}{7}}
+      \approx 1.309.
+      \label{eq:R-sigma168}
+    \end{equation}
+    The complete picture, combining both the $\mathrm{SU}(2)$ and $\mathrm{SU}(3)$ chains,
+    is summarised in Table~\ref{tab:full-chain}.
+
+    \begin{table}[h]
+      \centering
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{llccc}
+        \hline
+        Group & Chain & $d$ & $\lambda_{\min}$ & $R$ \\
+        \hline
+        $Q_8$ & $\mathrm{SU}(2)$ & 6  & 6  & $\sqrt{4/3} \approx 1.155$ \\
+        $2I$  & $\mathrm{SU}(2)$ & 24 & 18 & $\sqrt{14/9} \approx 1.247$ \\
+        $\Delta(27)$ & $\mathrm{SU}(3)$ & 6 & 6 & $\sqrt{3/2} \approx 1.225$
+        (degenerate) \\
+        $\Sigma(168)$ & $\mathrm{SU}(3)$ & 42 & 28 & $\sqrt{12/7} \approx 1.309$ \\
+        \hline
+      \end{tabular}
+      \caption{Admissibility ratio $R$ across the $\mathrm{SU}(2)$ and $\mathrm{SU}(3)$
+      chains.
+      For $\Delta(27)$, the ratio is labelled ``degenerate'' because the Weil pair ties
+      with six abelian sectors at $\lambda = 6$.
+      For $\Sigma(168)$, the ratio is strict.}
+      \label{tab:full-chain}
+    \end{table}
+
 \section{Conclusion}
   \label{sec:conclusion}
 
-  This note has carried out the spectral admissibility programme on the
-  inclusion chain
+  This note has carried out the spectral admissibility programme on two parallel
+  inclusion chains,
   \begin{equation}
     Q_8 \;\subset\; 2I \;\subset\; \mathrm{PSL}(2,\mathbb{F}_q)
     \;\xrightarrow{\;p,q\to\infty\;}
-    \mathrm{SU}(2),
+    \mathrm{SU}(2)
     \label{eq:chain-conclusion}
   \end{equation}
-  producing four families of results at progressively larger scales.
+  and
+  \begin{equation}
+    \Delta(27) \;\subset\; \Sigma(168) \;\subset\; \mathrm{SU}(3),
+    \label{eq:chain-su3-conclusion}
+  \end{equation}
+  producing six families of results at progressively larger scales.
 
   \paragraph{Steps 1--3 ($Q_8$).}
     On the Cayley graph $\Gamma(Q_8, \{\pm i, \pm j, \pm k\})$, the
@@ -2069,8 +2471,31 @@ mechanism at finite resolution.
     where the upper bound is the Ramanujan constraint and the lower bound
     reflects Proposition~\ref{prop:lps-hierarchy}.
 
-  \paragraph{The full sequence.}
-    The admissibility ratio evolves along the chain as
+  \paragraph{Step~7 ($\Delta(27)$ and $\Sigma(168)$).}
+    The $\mathrm{SU}(3)$ chain produces exact parallels of Steps~4 and~5.
+    On $\Delta(27) = \mathrm{Heis}_3(\mathbb{F}_3)$, the character sum
+    $\mu_{\mathbf{3}} = 0$ establishes the $\mathrm{SU}(3)$ structural anchor via
+    the Weil tracelessness identity; however, the hierarchy is degenerate (six abelian
+    sectors share $\lambda = 6$ with the Weil pair, giving $R_{\Delta(27)} =
+    \sqrt{3/2} \approx 1.225$ against the worst abelian sector only).
+    On $\Sigma(168) = \mathrm{PSL}(2,7)$, the character identity
+    $\chi_{\mathbf{3}}(g) = 1$ for all $g \in C_4$ fixes $\lambda_{\mathbf{3}} = 28$ and
+    yields the strict four-level hierarchy
+    \begin{equation}
+      \lambda_{\mathbf{3}} = \lambda_{\bar{\mathbf{3}}} = 28
+      \;<\;
+      \lambda_{\mathbf{6}} = \lambda_{\mathbf{8}} = 42
+      \;<\;
+      \lambda_{\mathbf{7}} = 48,
+      \label{eq:sigma168-ordering-concl}
+    \end{equation}
+    with admissibility contrast $R_{\Sigma(168)} = \sqrt{12/7} \approx 1.309$.
+    The fundamental and anti-fundamental representations $\mathbf{3}$ and $\bar{\mathbf{3}}$
+    are co-admissible and strictly dominate all competitors, in exact analogy with
+    $\lambda_{1/2} = \lambda_{3/2}$ on $2I$.
+
+  \paragraph{The full picture.}
+    The admissibility ratio evolves along the $\mathrm{SU}(2)$ chain as
     \begin{equation}
       \underbrace{\sqrt{\tfrac{4}{3}}}_{\displaystyle Q_8}
       \;\longrightarrow\;
@@ -2082,7 +2507,19 @@ mechanism at finite resolution.
       1,
       \label{eq:ratio-sequence-concl}
     \end{equation}
-    where the final value $1$ corresponds to the continuous $S^3$ geometry.
+    and along the $\mathrm{SU}(3)$ chain as
+    \begin{equation}
+      \underbrace{\sqrt{\tfrac{3}{2}}\;(\text{degen.})}_{\displaystyle \Delta(27)}
+      \;\longrightarrow\;
+      \underbrace{\sqrt{\tfrac{12}{7}}}_{\displaystyle \Sigma(168)}
+      \;\longrightarrow\;
+      [\text{open}],
+      \label{eq:ratio-sequence-su3-concl}
+    \end{equation}
+    where the final entry corresponds to an LPS-type family for $\mathrm{SU}(3)$
+    (open; analogous to Sections~\ref{sec:step6a-lps}--\ref{sec:step6d}).
+    Both sequences satisfy $R > 1$ at every finite level and are expected to tend to $1$
+    in the respective continuum limits $\mathrm{SU}(2)$ and $\mathrm{SU}(3)$.
 
   \paragraph{Interpretation.}
     The sequence~\eqref{eq:ratio-sequence-concl} has a precise physical
@@ -2095,27 +2532,29 @@ mechanism at finite resolution.
     but a genuine structural feature of bounded relational capacity at
     finite resolution.
 
-    The algebraic origin of the hierarchy is uniform across the chain.
+    The algebraic origin of the hierarchy is uniform across both chains.
     At every level, the generating set $S$ has higher character coherence
-    with the low-spin representations than with the high-spin ones.
-    This coherence, measured by $\kappa_j = \mu_j/(p+1)$, is the
+    with the lowest-dimensional faithful representations than with the higher ones.
+    This coherence, measured by $\kappa_j = \mu_j/d$ (with $d = |S|$), is the
     fundamental observable driving the admissibility selection.
 
   \paragraph{Summary.}
-    The analysis demonstrates that, on every Cayley graph in the chain
-    $Q_8 \subset 2I \subset \mathrm{PSL}(2,\mathbb{F}_q)$,
-    the local bounded-flux constraint selects the spin-$\tfrac{1}{2}$ sector
+    The analysis demonstrates that, on every Cayley graph in the chains
+    $Q_8 \subset 2I \subset \mathrm{PSL}(2,\mathbb{F}_q)$ and
+    $\Delta(27) \subset \Sigma(168) \subset \mathrm{SU}(3)$,
+    the local bounded-flux constraint selects the lowest-dimensional non-abelian sector
     as the most admissible.
     This selection is purely spectral: it requires no additional dynamical
     principle beyond the constraint itself and the algebraic structure of the
     generating set.
     The mechanism survives the non-linear DBI correction on $Q_8$, persists
-    through the explicit spin tower of $2I$, and extends to the full LPS family
-    approaching $\mathrm{SU}(2)$.
+    through the explicit spin tower of $2I$, extends to the full LPS family
+    approaching $\mathrm{SU}(2)$, and now admits an exact parallel for the
+    $\mathrm{SU}(3)$ chain through $\Sigma(168)$.
     It constitutes a minimal but complete demonstration that bounded
-    relational capacity can favour low-spin non-abelian sectors through
-    spectral admissibility alone.
-  % <<< End input: 11-conclusion/conclusion.tex
+    relational capacity can favour low-dimensional non-abelian sectors through
+    spectral admissibility alone, uniformly across the gauge structure of the
+    Standard Model.
 
   \bibliographystyle{plain}
   \bibliography{cosmochrony-bibliography,external-refs}
