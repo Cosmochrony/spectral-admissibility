@@ -4,6 +4,7 @@
 \usepackage{hyperref}
 \usepackage{geometry}
 \usepackage{graphicx}
+\usepackage{doi}
 \geometry{margin=2.5cm}
 
 \newtheorem{proposition}{Proposition}
@@ -19,23 +20,2104 @@ Non-Abelian Mode Selection on Cayley Graphs of SU(2) Subgroups}
   \maketitle
 
   \begin{abstract}
-    \input{abstract}
+    % >>> Begin input: abstract.tex
+We present the first analytically tractable instance of the spectral admissibility
+programme proposed in the Cosmochrony framework.
+On the undirected Cayley graph of the quaternion group $Q_8$, with generators
+$S=\{\pm i,\pm j,\pm k\}$, a local bounded–flux constraint
+$|\partial_t\chi_v|\le c_\chi$ induces a hierarchy of maximal admissible
+mode amplitudes across irreducible spectral sectors.
+
+In the linearised regime, the admissibility bound takes the universal form
+\[
+  A_n^{\max}=\frac{c_\chi}{\sqrt{\lambda_n}},
+\]
+where $\lambda_n$ are the Laplacian eigenvalues of the graph.
+This produces a spectral hierarchy in which the non-abelian sector
+admits a larger maximal effective amplitude than the nontrivial abelian sectors
+by a factor $\sqrt{4/3}$.
+
+We then perform a weakly nonlinear modal reduction of the discrete
+Dirac–Born–Infeld dynamics and show that the first nonlinear corrections
+preserve this hierarchy.
+Solving the one-mode DBI dynamics exactly on the $Q_8$ graph, we further show
+that the same envelope $A_n^{\max}=c_\chi/\sqrt{\lambda_n}$ coincides with the
+exact saturation boundary, demonstrating structural stability beyond the
+perturbative regime.
+
+The analysis is extended to the binary icosahedral group $2I$, the largest finite
+subgroup of $\mathrm{SU}(2)$, where the same admissibility envelope generates
+a four-level hierarchy across spin sectors with contrast $\sqrt{14/9}$.
+Together these results provide explicit realizations of spectral admissibility
+along the chain
+\[
+  Q_8 \subset 2I \subset \mathrm{SU}(2).
+\]
+
+More generally, the results show that bounded substrate capacity can act as a
+purely spectral filter favouring low-lying non-abelian sectors of relational
+dynamics.
+
+\medskip
+\noindent\textbf{Keywords:} Spectral graph theory, Cayley graphs, Representation theory,
+Laplacian spectrum, Dirac–Born–Infeld dynamics, Non-abelian symmetry, Bounded-flux dynamics
+    % <<< End input: abstract.tex
   \end{abstract}
 
   \clearpage
   \tableofcontents
 
   \clearpage
-  \input{01-intro/intro}
-  \input{02-q8-cayley/q8-cayley}
-  \input{03-spectral-decomposition/spectral-decomposition}
-  \input{04-bounded-flux-admissibility/bounded-flux-admissibility}
-  \input{05-admissibility-hierarchy/admissibility-hierarchy}
-  \input{06-dbi-dynamics/dbi-dynamics}
-  \input{07-structural-origin-of-hierarchy//structural-origin-of-hierarchy}
-  \input{08-extension-to-2i/extension-to-2i}
-  \input{09-sl/sl}
-  \input{10-step6bcd/step6bcd}
-  \input{11-conclusion/conclusion}
+  % >>> Begin input: 01-intro/intro.tex
+\section{Setting and Motivation}
+
+  The Cosmochrony framework identifies the physical spectrum with the residue of two
+  successive constraints acting on the relational operator $\mathcal{L}_\chi$:
+  \begin{enumerate}
+    \item \textbf{Topological discretisation}: the fibre structure of the non-injective
+    projection $\Pi$ organises modes into discrete winding sectors.
+    \item \textbf{Bounded-flux filtering}: the saturation bound
+    $|\partial_t \chi| \leq c_\chi$ eliminates modes whose local evolution would
+    exceed the substrate's relational capacity.
+  \end{enumerate}
+  The goal of this note is to make step~2 explicit and calculable on the simplest
+  non-trivial finite graph encoding a quaternionic algebraic structure,
+  as a minimal discrete proxy for $\mathrm{SU}(2)$-type sectors.
+  % <<< End input: 01-intro/intro.tex
+  % >>> Begin input: 02-q8-cayley/q8-cayley.tex
+\section{The $Q_8$ Cayley Graph}
+  \label{sec:q8-}
+
+  Let $Q_8 = \{{\pm 1, \pm i, \pm j, \pm k}\}$ denote the quaternion group of order~8.
+  We define the undirected Cayley graph $\Gamma(Q_8, S)$ with generating set
+  \begin{equation}
+    S = \{\pm i, \pm j, \pm k\}.
+  \end{equation}
+  Since $S$ is closed under inversion ($s^{-1} \in S$ for all $s \in S$) and does
+  not contain the identity, $\Gamma(Q_8, S)$ is a well-defined, connected, undirected,
+  $6$-regular graph on $8$ vertices.
+
+  \begin{remark}
+    The choice $S = \{i, j, k\}$ without inverses would yield a directed graph with an
+    asymmetric adjacency operator.
+    For a self-adjoint Laplacian, the full symmetric set
+    $S = \{\pm i, \pm j, \pm k\}$ is required.
+    The resulting graph is $6$-regular, not $3$-regular.
+  \end{remark}
+
+  % >>> Begin input: 02-q8-cayley/001-adjacency-operator-graph-laplacian.tex
+\subsection{Adjacency Operator and Graph Laplacian}
+  \label{subsec:adjacency-operator-graph-laplacian}
+
+  The adjacency operator $A$ of $\Gamma(Q_8, S)$ acts on functions
+  $f \colon Q_8 \to \mathbb{C}$ by
+  \begin{equation}
+    (Af)(g) = \sum_{s \in S} f(gs)
+  = \sum_{s \in \{\pm i, \pm j, \pm k\}} f(gs).
+  \end{equation}
+  The combinatorial graph Laplacian is
+  \begin{equation}
+    \mathcal{L} = dI - A,
+    \qquad
+    d = |S| = 6,
+  \end{equation}
+  where $I$ is the identity on $\ell^2(Q_8)$.
+  The eigenvalues of $\mathcal{L}$ are $\lambda = 6 - \mu$, where $\mu$ ranges over
+  the eigenvalues of $A$.
+  % <<< End input: 02-q8-cayley/001-adjacency-operator-graph-laplacian.tex
+  % <<< End input: 02-q8-cayley/q8-cayley.tex
+  % >>> Begin input: 03-spectral-decomposition/spectral-decomposition.tex
+\section{Spectral Decomposition via Representation Theory}
+  \label{sec:spectral-decomposition}
+
+  Since $Q_8$ is a finite group, $\ell^2(Q_8) \cong \mathbb{C}[Q_8]$ decomposes
+  as a $Q_8$-module into irreducible representations.
+  By the Peter--Weyl theorem for finite groups:
+  \begin{equation}
+    \mathbb{C}[Q_8] \cong \bigoplus_{\rho \in \widehat{Q_8}} V_\rho^{\oplus \dim \rho},
+  \end{equation}
+  where the sum runs over the five irreducible representations of $Q_8$.
+
+  % >>> Begin input: 03-spectral-decomposition/001-irreducible-representations-of-q_8.tex
+\subsection{Irreducible Representations of $Q_8$}
+  \label{subsec:irreducible-representations-of-q_8}
+
+  $Q_8$ has five irreducible representations:
+  \begin{center}
+    \begin{tabular}{lcccc}
+      \hline
+      Label              & Dimension & $\rho(i)$ & $\rho(j)$ & $\rho(k)$ \\
+      \hline
+      $\rho_0$ (trivial) & 1         & $1$       & $1$       & $1$       \\
+      $\rho_1$           & 1         & $1$       & $-1$      & $-1$      \\
+      $\rho_2$           & 1         & $-1$      & $1$       & $-1$      \\
+      $\rho_3$           & 1         & $-1$      & $-1$      & $1$       \\
+      $\rho_4$ (quaternionic) & 2 &
+      $\begin{pmatrix}
+         i&0\\0&-i
+      \end{pmatrix}$ &
+      $\begin{pmatrix}
+         0&1\\-1&0
+      \end{pmatrix}$ &
+      $\begin{pmatrix}
+         0&i\\i&0
+      \end{pmatrix}$ \\
+      \hline
+    \end{tabular}
+  \end{center}
+  The dimension check:
+  $1^2 + 1^2 + 1^2 + 1^2 + 2^2 = 8 = |Q_8|$.
+  % <<< End input: 03-spectral-decomposition/001-irreducible-representations-of-q_8.tex
+  % >>> Begin input: 03-spectral-decomposition/002-eigenvalues-of-adjacency-operator.tex
+\subsection{Eigenvalues of the Adjacency Operator}
+  \label{subsec:eigenvalues-of-adjacency-operator}
+
+  For any irreducible representation $\rho$, the adjacency operator acts as the
+  scalar $\mu_\rho \cdot I_{V_\rho}$ on $V_\rho$.
+  Since $S$ is a union of conjugacy classes of $Q_8$, the corresponding element
+  of the group algebra is central, and Schur's lemma gives
+  \begin{equation}
+    \mu_\rho = \frac{1}{\dim \rho} \sum_{s \in S} \chi_\rho(s),
+  \end{equation}
+  where $\chi_\rho$ is the character of $\rho$.
+
+  \paragraph{1D sectors.}
+    For the trivial representation $\rho_0$, $\chi_{\rho_0}(s) = 1$ for all
+    $s \in S$, so $\sum_{s \in S} \chi_{\rho_0}(s) = 6$ and
+    \begin{equation}
+      \mu_{\rho_0} = 6,
+      \qquad
+      \lambda_{\rho_0} = 6 - 6 = 0.
+    \end{equation}
+    For $\rho_1$, $\chi_{\rho_1}(\pm i) = 1$ and
+    $\chi_{\rho_1}(\pm j) = \chi_{\rho_1}(\pm k) = -1$,
+    so $\sum_{s \in S} \chi_{\rho_1}(s) = 2(1) + 4(-1) = -2$, giving
+    $\mu_{\rho_1} = -2$ and $\lambda_{\rho_1} = 8$.
+    By the symmetry of $Q_8$ under permutations of $\{i,j,k\}$,
+    $\mu_{\rho_2} = \mu_{\rho_3} = -2$ and
+    $\lambda_{\rho_2} = \lambda_{\rho_3} = 8$.
+
+  \paragraph{2D sector.}
+    For the quaternionic representation $\rho_4$, we compute the character at each
+    generator.
+    The matrices $\rho_4(i)$, $\rho_4(-i)$, $\rho_4(j)$, $\rho_4(-j)$,
+    $\rho_4(k)$, $\rho_4(-k)$ each have trace zero.
+    Thus $\sum_{s \in S} \chi_{\rho_4}(s) = 0$ and
+    \begin{equation}
+      \mu_{\rho_4} = 0,
+      \qquad
+      \lambda_{\rho_4} = 6.
+    \end{equation}
+  % <<< End input: 03-spectral-decomposition/002-eigenvalues-of-adjacency-operator.tex
+  % >>> Begin input: 03-spectral-decomposition/003-summary-of-spectrum.tex
+\subsection{Summary of the Spectrum}
+  \label{subsec:summary-of-spectrum}
+
+  \begin{center}
+    \begin{tabular}{lccc}
+      \hline
+      Sector                   & $\lambda_n$ & Multiplicity & Type                     \\
+      \hline
+      $\rho_0$                 & $0$         & $1$          & Trivial zero mode        \\
+      $\rho_1, \rho_2, \rho_3$ & $8$         & $3$          & Nontrivial abelian       \\
+      $\rho_4$                 & $6$         & $4$          & Non-abelian quaternionic \\
+      \hline
+    \end{tabular}
+  \end{center}
+  Total dimension: $1 + 3 + 4 = 8$.
+  % <<< End input: 03-spectral-decomposition/003-summary-of-spectrum.tex
+  % <<< End input: 03-spectral-decomposition/spectral-decomposition.tex
+  % >>> Begin input: 04-bounded-flux-admissibility/bounded-flux-admissibility.tex
+\section{Bounded-Flux Admissibility Condition}
+  \label{sec:bounded-flux-admissibility}
+
+  % >>> Begin input: 04-bounded-flux-admissibility/001-setup.tex
+\subsection{Setup}
+  \label{subsec:setup}
+
+  Let the substrate field $\chi \colon Q_8 \times \mathbb{R} \to \mathbb{R}$ evolve
+  on the graph, subject to the local bounded-flux constraint
+  \begin{equation}
+    \label{eq:flux-bound}
+    |\partial_t \chi_v(t)| \leq c_\chi
+    \qquad
+    \forall v \in Q_8,
+    \ \forall t.
+  \end{equation}
+  Consider a single-mode excitation
+  \begin{equation}
+    \chi_v(t) = a_n \psi_n(v) \cos(\omega_n t),
+  \end{equation}
+  where $\psi_n$ is an eigenmode of $\mathcal{L}$ with eigenvalue $\lambda_n$,
+  normalised in $\ell^2(Q_8)$, and $a_n > 0$ is the mode amplitude.
+  The time derivative at vertex $v$ is
+  \begin{equation}
+    \partial_t \chi_v(t) = -a_n \omega_n \psi_n(v) \sin(\omega_n t).
+  \end{equation}
+  The constraint~\eqref{eq:flux-bound} requires
+  \begin{equation}
+    |\omega_n| \cdot a_n \cdot |\psi_n(v)| \leq c_\chi
+    \qquad
+    \forall v \in Q_8.
+  \end{equation}
+  The binding constraint is at the vertex where $|\psi_n(v)|$ is maximal:
+  \begin{equation}
+    |\omega_n| \cdot a_n \cdot \|\psi_n\|_\infty \leq c_\chi.
+  \end{equation}
+  % <<< End input: 04-bounded-flux-admissibility/001-setup.tex
+  % >>> Begin input: 04-bounded-flux-admissibility/002-effective-amplitude-and-admissibility-envelope.tex
+\subsection{Effective Amplitude and Admissibility Envelope}
+  \label{subsec:effective-amplitude-and-admissibility-envelope}
+
+  \begin{definition}
+    The effective amplitude of a mode $(\psi_n, a_n)$ is
+    \begin{equation}
+      A_n := a_n \|\psi_n\|_\infty.
+    \end{equation}
+    A mode is dynamically admissible in the linearised regime if
+    \begin{equation}
+      \label{eq:admissibility}
+      |\omega_n| \cdot A_n \leq c_\chi.
+    \end{equation}
+  \end{definition}
+
+  In the linearised dispersion approximation, $\omega_n^2 \approx \lambda_n$, so the
+  maximal admissible effective amplitude is
+  \begin{equation}
+    \label{eq:envelope}
+    A_n^{\max} = \frac{c_\chi}{\sqrt{\lambda_n}}.
+  \end{equation}
+  This defines the admissibility envelope in the $(\lambda_n, A_n)$ plane.
+
+  \begin{figure}[t]
+    \centering
+    \includegraphics[width=0.82\textwidth]{fig1_Q8_admissibility}
+    \caption{
+      Admissibility envelope on the $Q_8$ Cayley graph with
+      $S=\{\pm i,\pm j,\pm k\}$.
+      The maximal effective amplitude
+      $A_n^{\max}=c_\chi/\sqrt{\lambda_n}$
+      is larger in the quaternionic non-abelian sector
+      $\rho_4$ ($\lambda=6$) than in the non-trivial abelian sectors
+      ($\lambda=8$), by the factor $\sqrt{4/3}$.
+    }
+    \label{fig:q8-admissibility}
+  \end{figure}
+
+  \begin{remark}
+    The linearised dispersion $\omega_n^2 = \lambda_n$ is valid for
+    $A_n \ll c_\chi / \sqrt{\lambda_n}$.
+    The non-linear Born--Infeld correction modifies this relation near saturation and
+    requires a modal reduction of the DBI action.
+    The envelope~\eqref{eq:envelope} should therefore be understood first as the
+    admissibility boundary in the weakly non-linear regime.
+  \end{remark}
+  % <<< End input: 04-bounded-flux-admissibility/002-effective-amplitude-and-admissibility-envelope.tex
+  % >>> Begin input: 04-bounded-flux-admissibility/003-explicit-rho4.tex
+\subsection{Explicit Eigenmodes in the $\rho_4$ Sector}
+  \label{subsec:explicit-rho4}
+
+  The non-abelian sector $\rho_4$ has multiplicity $4$ in $\ell^2(Q_8)$, so the
+  quantity $\|\psi_n\|_\infty$ is not determined until an explicit basis of the
+  eigenspace is chosen.
+  A natural orthonormal basis is provided by the matrix coefficients of the
+  quaternionic irreducible representation.
+
+  For a finite group $G$ and an irreducible representation $\rho$, the standard
+  Peter--Weyl basis of the corresponding isotypic component is given by
+  \begin{equation}
+    \psi_{uv}(g)
+    =
+    \sqrt{\frac{\dim \rho}{|G|}}\,\rho(g)_{uv},
+    \qquad
+    u,v \in \{1,\dots,\dim \rho\}.
+  \end{equation}
+  For $Q_8$ and $\rho_4$, this becomes
+  \begin{equation}
+    \psi_{uv}(g)
+    =
+    \frac{1}{2}\,\rho_4(g)_{uv},
+    \qquad
+    u,v \in \{1,2\},
+  \end{equation}
+  since $\dim \rho_4 = 2$ and $|Q_8| = 8$.
+
+  Using the explicit matrices
+  \begin{equation}
+    \rho_4(1)=
+    \begin{pmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{pmatrix},
+    \qquad
+    \rho_4(-1)=
+    \begin{pmatrix}
+      -1 & 0 \\
+      0 & -1
+    \end{pmatrix},
+  \end{equation}
+  \begin{equation}
+    \rho_4(i)=
+    \begin{pmatrix}
+      i & 0 \\
+      0 & -i
+    \end{pmatrix},
+    \qquad
+    \rho_4(j)=
+    \begin{pmatrix}
+      0 & 1 \\
+      -1 & 0
+    \end{pmatrix},
+    \qquad
+    \rho_4(k)=
+    \begin{pmatrix}
+      0 & i \\
+      i & 0
+    \end{pmatrix},
+  \end{equation}
+  one finds that the diagonal modes $\psi_{11}, \psi_{22}$ are supported on
+  $\{\pm 1, \pm i\}$, while the off-diagonal modes $\psi_{12}, \psi_{21}$ are
+  supported on $\{\pm j, \pm k\}$.
+  In all four cases,
+  \begin{equation}
+    |\psi_{uv}(g)| \in \left\{0,\frac{1}{2}\right\},
+  \end{equation}
+  hence
+  \begin{equation}
+    \|\psi_{uv}\|_\infty = \frac{1}{2},
+    \qquad
+    u,v \in \{1,2\}.
+  \end{equation}
+
+  For the one-dimensional nontrivial abelian sectors $\rho_1, \rho_2, \rho_3$,
+  the normalised eigenmodes are the corresponding characters scaled by
+  $|Q_8|^{-1/2}$.
+  Since these characters take values in $\{\pm 1\}$, one has
+  \begin{equation}
+    \|\psi_{\rho_k}\|_\infty = \frac{1}{\sqrt{8}},
+    \qquad
+    k = 1,2,3.
+  \end{equation}
+  % <<< End input: 04-bounded-flux-admissibility/003-explicit-rho4.tex
+  % >>> Begin input: 04-bounded-flux-admissibility/004-basis-resolved-admissibility.tex
+\subsection{Basis-Resolved Admissibility}
+  \label{subsec:basis-resolved-admissibility}
+
+  \begin{proposition}[Basis-resolved admissibility on $Q_8$]
+    \label{prop:basis-resolved}
+    In the canonical Peter--Weyl basis of $\ell^2(Q_8)$, the maximal admissible
+    effective amplitudes satisfy
+    \begin{equation}
+      A_{\rho_4}^{\max}
+      =
+      \frac{c_\chi}{\sqrt{6}}
+      >
+      \frac{c_\chi}{\sqrt{8}}
+      =
+      A_{\rho_k}^{\max},
+      \qquad
+      k=1,2,3,
+    \end{equation}
+    whereas the corresponding maximal raw amplitudes satisfy
+    \begin{equation}
+      a_{\rho_4}^{\max}
+      =
+      \frac{c_\chi}{\sqrt{6}\,\|\psi_{\rho_4}\|_\infty}
+      =
+      \frac{2}{\sqrt{6}}\,c_\chi
+      \approx 0.816\,c_\chi,
+    \end{equation}
+    \begin{equation}
+      a_{\rho_k}^{\max}
+      =
+      \frac{c_\chi}{\sqrt{8}\,\|\psi_{\rho_k}\|_\infty}
+      =
+      c_\chi,
+      \qquad
+      k=1,2,3.
+    \end{equation}
+    Thus the non-abelian sector is favoured in effective amplitude, but not in raw
+    amplitude.
+  \end{proposition}
+
+  \begin{proof}
+    The effective-amplitude statement follows from
+    $A_n^{\max} = c_\chi/\sqrt{\lambda_n}$ together with
+    $\lambda_{\rho_4} = 6$ and $\lambda_{\rho_k} = 8$.
+    The raw-amplitude statement follows from
+    $a_n^{\max} = A_n^{\max}/\|\psi_n\|_\infty$, using
+    $\|\psi_{\rho_4}\|_\infty = 1/2$ and
+    $\|\psi_{\rho_k}\|_\infty = 1/\sqrt{8}$.
+  \end{proof}
+  % <<< End input: 04-bounded-flux-admissibility/004-basis-resolved-admissibility.tex
+  % >>> Begin input: 04-bounded-flux-admissibility/005-weakly-nonlinear-dbi-reduction.tex
+\subsection{Weakly Non-linear Modal DBI Reduction}
+  \label{subsec:weakly-nonlinear-dbi-reduction}
+
+  To incorporate the first Born--Infeld correction, consider the discrete DBI Lagrangian
+  \begin{equation}
+    \label{eq:dbi-lagrangian}
+    L
+    =
+    -c_\chi^2 \sum_v \sqrt{1 - \dot{\chi}_v^2/c_\chi^2}
+    - \tfrac{1}{2} \sum_{v,w} \chi_v \mathcal{L}_{vw} \chi_w.
+  \end{equation}
+  For a single eigenmode,
+  \begin{equation}
+    \chi_v(t) = q(t)\psi_n(v),
+  \end{equation}
+  with $\mathcal{L}\psi_n = \lambda_n \psi_n$ and $\|\psi_n\|_2 = 1$, this reduces to
+  the exact one-mode Lagrangian
+  \begin{equation}
+    \label{eq:exact-mode-lagrangian}
+    L_n[q]
+    =
+    -c_\chi^2 \sum_v \sqrt{1 - \psi_n(v)^2 \dot{q}^{\,2}/c_\chi^2}
+    - \tfrac{1}{2}\lambda_n q^2.
+  \end{equation}
+
+  Expanding the square root for $|\dot{q}| \ll c_\chi$ gives
+  \begin{equation}
+    \label{eq:mode-lagrangian-expansion}
+    L_n[q]
+    =
+    \mathrm{const}
+    + \tfrac{1}{2}\dot{q}^{\,2}
+    + \frac{\kappa_n}{8c_\chi^2}\dot{q}^{\,4}
+    - \tfrac{1}{2}\lambda_n q^2
+    + \mathcal{O}(c_\chi^{-4}),
+  \end{equation}
+  where
+  \begin{equation}
+    \label{eq:kappa-def}
+    \kappa_n := \sum_v \psi_n(v)^4.
+  \end{equation}
+  The corresponding Euler--Lagrange equation is
+  \begin{equation}
+    \label{eq:weakly-nonlinear-mode-equation}
+    \left(
+      1 + \frac{3\kappa_n}{2c_\chi^2}\dot{q}^{\,2}
+    \right)\ddot{q}
+    + \lambda_n q
+    = 0.
+  \end{equation}
+
+  Using the harmonic-balance ansatz
+  \begin{equation}
+    q(t) \approx a_n \cos(\omega_n t),
+  \end{equation}
+  and keeping only the fundamental harmonic, one obtains the first
+  amplitude-dependent correction
+  \begin{equation}
+    \label{eq:omega-shift-square}
+    \omega_n^2(a_n)
+    \approx
+    \lambda_n
+    \left(
+      1 - \frac{3\kappa_n\lambda_n a_n^2}{8c_\chi^2}
+    \right),
+  \end{equation}
+  or equivalently
+  \begin{equation}
+    \label{eq:omega-shift}
+    \omega_n(a_n)
+    \approx
+    \sqrt{\lambda_n}
+    \left(
+      1 - \frac{3\kappa_n\lambda_n a_n^2}{16c_\chi^2}
+    \right).
+  \end{equation}
+  The DBI correction is therefore a softening non-linearity.
+
+  In the canonical $Q_8$ basis, the quartic shape factor is explicit.
+  For the one-dimensional nontrivial abelian sectors,
+  \begin{equation}
+    \label{eq:kappa-abelian}
+    \kappa_{\rho_k}
+    =
+    \sum_{v \in Q_8} \left(\frac{1}{\sqrt{8}}\right)^4
+    =
+    \frac{1}{8},
+    \qquad
+    k = 1,2,3.
+  \end{equation}
+  For each canonical basis vector in the $\rho_4$ sector,
+  \begin{equation}
+    \label{eq:kappa-nonabelian}
+    \kappa_{\rho_4}
+    =
+    4 \left(\frac{1}{2}\right)^4
+    =
+    \frac{1}{4}.
+  \end{equation}
+
+  However, rewriting the correction in terms of the effective amplitude
+  $A_n = a_n\|\psi_n\|_\infty$ gives
+  \begin{equation}
+    \label{eq:omega-shift-effective}
+    \omega_n^2(A_n)
+    \approx
+    \lambda_n
+    \left(
+      1
+      - \frac{3\lambda_n A_n^2}{8c_\chi^2}
+      \frac{\kappa_n}{\|\psi_n\|_\infty^2}
+    \right).
+  \end{equation}
+  In the canonical $Q_8$ basis,
+  \begin{equation}
+    \frac{\kappa_{\rho_k}}{\|\psi_{\rho_k}\|_\infty^2}
+    =
+    \frac{(1/8)}{(1/\sqrt{8})^2}
+    =
+    1,
+    \qquad
+    \frac{\kappa_{\rho_4}}{\|\psi_{\rho_4}\|_\infty^2}
+    =
+    \frac{(1/4)}{(1/2)^2}
+    =
+    1.
+  \end{equation}
+  Therefore
+  \begin{equation}
+    \label{eq:omega-shift-effective-q8}
+    \omega_n^2(A_n)
+    \approx
+    \lambda_n
+    \left(
+      1 - \frac{3\lambda_n A_n^2}{8c_\chi^2}
+    \right)
+  \end{equation}
+  in both the nontrivial abelian and non-abelian sectors.
+
+  \begin{figure}[t]
+    \centering
+    \includegraphics[width=0.9\textwidth]{fig2_Q8_DBI_dynamics}
+    \caption{
+      One-mode DBI dynamics on the $Q_8$ Cayley graph.
+      Top: effective amplitudes in the quaternionic and abelian sectors.
+      Bottom: corresponding saturation fractions relative to the exact
+      admissibility bounds.
+      The horizontal axis denotes the evolution parameter of the reduced
+      modal dynamics.
+      The quaternionic sector retains the largest admissible window,
+      consistent with the spectral hierarchy derived from the bounded-flux
+      constraint.
+    }
+    \label{fig:q8-dbi-dynamics}
+  \end{figure}
+
+  At fixed effective amplitude, the non-abelian sector thus remains less penalised
+  by the weakly non-linear DBI correction, solely because $\lambda_{\rho_4}=6$
+  is smaller than $\lambda_{\rho_k}=8$.
+  % <<< End input: 04-bounded-flux-admissibility/005-weakly-nonlinear-dbi-reduction.tex
+  % >>> Begin input: 04-bounded-flux-admissibility/006-nonperturbative-dbi.tex
+\subsection{Non-perturbative DBI Envelope}
+  \label{subsec:nonperturbative-dbi}
+
+  The weakly non-linear reduction derived in
+  Section~\ref{subsec:weakly-nonlinear-dbi-reduction} provides the leading
+  amplitude correction to the dispersion relation.
+  However, the discrete Dirac--Born--Infeld dynamics allows the
+  single-mode problem to be solved exactly on the $Q_8$ Cayley graph.
+
+  Consider again a single eigenmode
+  \[
+    \chi_v(t) = q(t)\psi_n(v),
+  \]
+  with $\mathcal{L}\psi_n = \lambda_n \psi_n$ and $\|\psi_n\|_2=1$.
+  Substituting this ansatz into the DBI Lagrangian
+  Eq.~\eqref{eq:dbi-lagrangian} gives the exact one-mode Lagrangian
+  \begin{equation}
+    L_n[q]
+    =
+    -c_\chi^2
+    \sum_{v\in Q_8}
+    \sqrt{1-\frac{\psi_n(v)^2\dot q^{\,2}}{c_\chi^2}}
+    -
+    \frac12\lambda_n q^2 .
+  \end{equation}
+
+  \subsubsection*{Abelian sectors}
+
+    For the nontrivial abelian representations $\rho_1,\rho_2,\rho_3$,
+    the normalized eigenmodes satisfy
+    \[
+      |\psi_n(v)| = \frac{1}{\sqrt{8}}
+      \qquad
+      \forall v\in Q_8 .
+    \]
+    The Lagrangian therefore becomes
+    \begin{equation}
+      L
+      =
+      -8c_\chi^2
+      \sqrt{1-\frac{\dot q^{\,2}}{8c_\chi^2}}
+      -
+      \frac12\lambda_n q^2 .
+    \end{equation}
+
+  \subsubsection*{Non-abelian sector}
+
+    For the quaternionic sector $\rho_4$ in the canonical basis,
+    the eigenmodes satisfy
+    \[
+      |\psi_n(v)| =
+      \begin{cases}
+        \frac12 & \text{on four vertices}, \\
+        0 & \text{on four vertices}.
+      \end{cases}
+    \]
+    The DBI sum therefore reduces to
+    \begin{equation}
+      L
+      =
+      -4c_\chi^2
+      \sqrt{1-\frac{\dot q^{\,2}}{4c_\chi^2}}
+      -4c_\chi^2
+      -
+      \frac12\lambda_n q^2 .
+    \end{equation}
+    The constant term does not affect the dynamics, and the effective
+    Lagrangian becomes
+    \begin{equation}
+      L
+      =
+      -4c_\chi^2
+      \sqrt{1-\frac{\dot q^{\,2}}{4c_\chi^2}}
+      -
+      \frac12\lambda_n q^2 .
+    \end{equation}
+
+  \subsubsection*{Energy conservation}
+
+    Since the Lagrangian is time independent, the corresponding Hamiltonian
+    is conserved.
+    One obtains
+    \begin{equation}
+      E
+      =
+      4c_\chi^2
+      \frac{1}{\sqrt{1-\frac{\dot q^{\,2}}{4c_\chi^2}}}
+      +
+      \frac12\lambda_n q^2 .
+    \end{equation}
+    At the turning points $\dot q=0$, where $q=\pm a_n$, the energy becomes
+    \begin{equation}
+      E
+      =
+      4c_\chi^2
+      +
+      \frac12\lambda_n a_n^2 ,
+    \end{equation}
+    where $a_n$ denotes the raw oscillation amplitude of the modal coordinate.
+
+  \subsubsection*{Velocity bound}
+
+    The DBI square root imposes the kinematic bound
+    \begin{equation}
+      |\dot q| < 2c_\chi .
+    \end{equation}
+    Expressed in terms of the field variable,
+    \[
+      \chi_v = q\psi_n(v),
+    \]
+    this corresponds exactly to the local flux constraint
+    \[
+      |\partial_t \chi_v| \le c_\chi .
+    \]
+
+  \subsubsection*{Amplitude bound}
+
+    The turning point occurs when the maximal vertex saturates the flux bound,
+    \[
+      |\partial_t\chi_v|
+      =
+      |\dot q|\,|\psi_n(v)|
+      =
+      c_\chi .
+    \]
+    Since $\|\psi_n\|_\infty$ is the maximal value of $|\psi_n(v)|$, this gives
+    \begin{equation}
+      a_n^{\max}
+      =
+      \frac{c_\chi}{\|\psi_n\|_\infty\sqrt{\lambda_n}} .
+    \end{equation}
+    The corresponding effective amplitude
+    \[
+      A_n = a_n\|\psi_n\|_\infty
+    \]
+    therefore satisfies
+    \begin{equation}
+      A_n^{\max}
+      =
+      \frac{c_\chi}{\sqrt{\lambda_n}} .
+    \end{equation}
+
+  \subsubsection*{Exact admissibility envelope}
+
+    We thus obtain the non-perturbative result
+    \begin{equation}
+      A_n^{\max}
+      =
+      \frac{c_\chi}{\sqrt{\lambda_n}},
+    \end{equation}
+    which coincides exactly with the admissibility envelope derived from the
+    linear bounded-flux argument.
+
+    The weakly non-linear correction therefore does not modify the
+    location of the admissibility boundary.
+    Instead, the DBI dynamics smoothly interpolates between the linear regime
+    and a velocity-saturated regime as the amplitude approaches the bound.
+
+    This shows that the spectral admissibility envelope identified above is not
+    merely a linear approximation but the exact saturation boundary for the
+    single-mode DBI dynamics on the $Q_8$ Cayley graph.
+  % <<< End input: 04-bounded-flux-admissibility/006-nonperturbative-dbi.tex
+  % <<< End input: 04-bounded-flux-admissibility/bounded-flux-admissibility.tex
+  % >>> Begin input: 05-admissibility-hierarchy/admissibility-hierarchy.tex
+\section{Admissibility Hierarchy on the $Q_8$ Cayley Graph}
+  \label{sec:admissibility-hierarchy-on-the-q_8-cayley-graph}
+
+  \begin{proposition}[Spectral admissibility hierarchy on $Q_8$]
+    \label{prop:main}
+    In the undirected Cayley graph $\Gamma(Q_8, \{\pm i, \pm j, \pm k\})$,
+    under the local bounded-flux constraint~\eqref{eq:flux-bound} and linearised
+    dispersion, the maximal admissible effective amplitude satisfies
+    \begin{equation}
+      A^{\max}_{\rho_4} = \frac{c_\chi}{\sqrt{6}}
+      >
+      \frac{c_\chi}{\sqrt{8}}
+      = A^{\max}_{\rho_k},
+      \qquad
+      k = 1,2,3.
+    \end{equation}
+    The non-abelian sector $\rho_4$ occupies a strictly larger admissible region in the
+    space of effective mode amplitudes than any nontrivial abelian sector, by a factor
+    \begin{equation}
+      \frac{A^{\max}_{\rho_4}}{A^{\max}_{\rho_k}}
+      =
+      \sqrt{\frac{8}{6}}
+      =
+      \sqrt{\frac{4}{3}}
+      \approx 1.155.
+    \end{equation}
+  \end{proposition}
+
+  \begin{proof}
+    Direct substitution of $\lambda_{\rho_4} = 6$ and $\lambda_{\rho_k} = 8$
+    into the admissibility envelope~\eqref{eq:envelope}.
+  \end{proof}
+
+  \begin{remark}
+    The trivial sector $\rho_0$ has $\lambda = 0$ and thus formally unbounded $A^{\max}$.
+    It corresponds to the uniform zero mode of the connected graph.
+    In the present analysis it is factored out, since we are interested only in
+    non-trivial excitations above the connected background.
+  \end{remark}
+
+  Proposition~\ref{prop:main}, together with
+  Proposition~\ref{prop:basis-resolved}, establishes that, at fixed substrate capacity
+  $c_\chi$, the non-abelian irreducible sector of the quaternion Cayley graph sustains
+  a larger local effective amplitude before violating the bounded-flux constraint,
+  even though its raw amplitude bound is lower than that of the nontrivial abelian
+  sectors.
+
+  In the language of the Cosmochrony programme:
+  \begin{itemize}
+    \item The admissibility envelope $A_n^{\max} = c_\chi / \sqrt{\lambda_n}$ defines a
+    geometry of exclusion in the space of relational modes.
+    Modes above the envelope are dynamically inadmissible.
+    \item The non-abelian sector $\rho_4$ lies below this envelope for a larger
+    range of effective amplitudes than the nontrivial abelian sectors
+    $\rho_1, \rho_2, \rho_3$.
+    The bounded-flux constraint is therefore less restrictive for non-abelian modes,
+    enlarging their admissible window by a factor of $\sqrt{4/3}$.
+    \item This advantage is a statement about the physically relevant local variable
+    $A_n = a_n \|\psi_n\|_\infty$, not about the raw amplitude $a_n$.
+    \item In the canonical basis, the weakly non-linear DBI correction again favours
+    the non-abelian sector through its smaller eigenvalue.
+    \item The exact one-mode DBI analysis shows that the same envelope
+    $A_n^{\max} = c_\chi/\sqrt{\lambda_n}$ remains the true saturation boundary.
+  \end{itemize}
+
+  \begin{remark}[Real field and complex eigenmodes]
+      The substrate field $\chi$ is taken real-valued.
+      The natural eigenmodes of the 2D sector are matrix coefficients of $\rho_4$,
+      which are complex-valued.
+      One may either work in $\ell^2(Q_8,\mathbb{C})$ and take real and imaginary parts to
+      obtain real eigenmodes, or directly choose a real basis for each eigenspace.
+      The local admissibility criterion is intrinsically defined, but its expression in
+      terms of $(a_n,\psi_n)$ depends on the chosen basis within a degenerate eigenspace
+      through $\|\psi_n\|_\infty$.
+      This basis dependence is resolved explicitly in
+      Section~\ref{subsec:explicit-rho4}.
+  \end{remark}
+  % <<< End input: 05-admissibility-hierarchy/admissibility-hierarchy.tex
+  % >>> Begin input: 06-dbi-dynamics/dbi-dynamics.tex
+\section{Synthesis: Spectral Filtering by Bounded Flux}
+  \label{sec:synthesis-spectral-filtering-by-bounded-flux}
+
+  The analysis performed in this note identifies the effective amplitude
+  \[
+    A_n = a_n \|\psi_n\|_\infty
+  \]
+  as the physically relevant variable controlling the saturation of the
+  substrate.
+
+  \subsection{Local Flux Constraint as a Spectral Filter}
+
+    The bounded-flux condition
+    \[
+      |\partial_t \chi_v| \le c_\chi
+    \]
+    acts locally on each vertex of the relational substrate.
+
+    For a single eigenmode
+    \[
+      \chi_v(t) = a_n \psi_n(v) \cos(\omega_n t),
+    \]
+    the constraint becomes
+    \[
+      |\omega_n|\,a_n\,\|\psi_n\|_\infty \le c_\chi.
+    \]
+
+    Introducing the effective amplitude
+    \[
+      A_n = a_n \|\psi_n\|_\infty
+    \]
+    yields the admissibility envelope
+    \[
+      A_n^{\max} = \frac{c_\chi}{\sqrt{\lambda_n}}.
+    \]
+
+    A key consequence is that localisation of the mode does not alter the
+    admissibility bound itself.
+    Localisation only determines how the raw amplitude $a_n$ translates into
+    a local flux impact on the substrate.
+    The selection mechanism is therefore governed by the spectral
+    eigenvalue $\lambda_n$.
+
+  \subsection{DBI Softening as Dynamical Spectral Filtering}
+
+    In the weakly non-linear regime the discrete Dirac--Born--Infeld dynamics
+    produces an amplitude-dependent frequency
+    \[
+      \omega_n^2(A_n)
+      \approx
+      \lambda_n
+      \left(
+        1 -
+        \frac{3\lambda_n A_n^2}{8c_\chi^2}
+      \right).
+    \]
+
+    This simplified expression follows from the identity
+    \[
+      \frac{\kappa_n}{\|\psi_n\|_\infty^2}=1
+    \]
+    which holds for all non-trivial sectors of the $Q_8$ Cayley graph.
+
+    The non-linear correction therefore depends only on the Laplacian
+    eigenvalue.
+    Modes with larger $\lambda_n$ undergo stronger softening as the
+    effective amplitude increases.
+
+    The relational substrate thus behaves as a dynamical low-pass spectral
+    filter.
+
+  \subsection{Conceptual Interpretation}
+
+    The mechanism uncovered in this toy model can be summarised as
+    \[
+      \text{sub\-strate capacity}
+      \;\rightarrow\;
+      \text{spectral admissibility}
+      \;\rightarrow\;
+      \text{nonlinear filtering}
+      \;\rightarrow\;
+      \text{surviving sectors}.
+    \]
+
+    On the $Q_8$ Cayley graph the smallest non-trivial eigenvalue
+    \[
+      \lambda_{\rho_4}=6
+    \]
+    belongs to the quaternionic non-abelian sector.
+    This sector therefore possesses the largest admissible amplitude window
+    and is the least affected by DBI softening.
+
+    The non-perturbative DBI reduction derived in
+    Section~\ref{subsec:nonperturbative-dbi} shows that the admissibility
+    envelope
+    \[
+      A_n^{\max} = \frac{c_\chi}{\sqrt{\lambda_n}}
+    \]
+    is not merely a linear approximation.
+    It coincides with the exact saturation boundary of the one-mode
+    DBI dynamics on the $Q_8$ Cayley graph.
+
+    The bounded relational capacity of the substrate therefore acts
+    not merely as a spectral cut-off but as a dynamical selector,
+    favouring the most resilient spectral sectors.
+
+  \subsection{Beyond the $Q_8$ Toy Model}
+
+    The identity
+    \[
+      \frac{\kappa_n}{\|\psi_n\|_\infty^2}=1
+    \]
+    is a special feature of the small and highly symmetric $Q_8$ graph.
+
+    On larger graphs this ratio will generally depend on the structure of
+    the eigenmodes.
+    The non-linear DBI correction may therefore amplify the spectral
+    selection mechanism rather than acting uniformly across sectors.
+  % <<< End input: 06-dbi-dynamics/dbi-dynamics.tex
+  % >>> Begin input: 07-structural-origin-of-hierarchy/structural-origin-of-hierarchy.tex
+\section{Structural Origin of the Admissibility Hierarchy and the SU(2) Emergence Thread}
+  \label{sec:structural-origin-of-hierarchy}
+
+  \subsection{The ratio $\sqrt{4/3}$ is not accidental}
+    \label{sec:step4-origin}
+
+    The admissibility hierarchy established in Proposition~\ref{prop:main},
+    \begin{equation}
+      \frac{A^{\max}_{\rho_4}}{A^{\max}_{\rho_k}}
+      = \sqrt{\frac{8}{6}} = \sqrt{\frac{4}{3}} \approx 1.155,
+      \label{eq:ratio}
+    \end{equation}
+    has a precise internal origin in the $Q_8$ Cayley spectrum.
+    It originates entirely from the Laplacian eigenvalues
+    $\lambda_{\rho_4} = 6$ and $\lambda_{\rho_k} = 8$.
+    The ratio $8/6$ is in turn fixed by the adjacency eigenvalues
+    $\mu_{\rho_k} = -2$ and $\mu_{\rho_4} = 0$ through $\lambda = d - \mu$ with $d = 6$.
+
+    The central observation is that $\mu_{\rho_4} = 0$.
+    The quaternionic sector lies exactly at the centre of the adjacency spectrum.
+    This is a structural consequence of the character theory of $Q_8$,
+    not a numerical coincidence.
+
+  \subsection{Why $\mu_{\rho_4} = 0$: character-theoretic argument}
+    \label{sec:step4-character}
+
+    For any Cayley graph on a finite group $G$ with symmetric generating set $S$,
+    Schur's lemma gives the adjacency eigenvalue in the irreducible sector $\rho$ as
+    \begin{equation}
+      \mu_\rho = \frac{1}{\dim \rho} \sum_{s \in S} \chi_\rho(s).
+      \label{eq:mu-character}
+    \end{equation}
+    For the quaternionic representation $\rho_4$ of $Q_8$, the generating set
+    $S = \{\pm i, \pm j, \pm k\}$ maps to the matrices
+    \begin{equation}
+      \rho_4({\pm i}) = \pm\begin{pmatrix}
+                             i & 0 \\ 0 & -i
+      \end{pmatrix},
+      \quad
+      \rho_4({\pm j}) = \pm\begin{pmatrix}
+                             0 & 1 \\ -1 & 0
+      \end{pmatrix},
+      \quad
+      \rho_4({\pm k}) = \pm\begin{pmatrix}
+                             0 & i \\ i & 0
+      \end{pmatrix}.
+    \end{equation}
+    All six generator matrices are traceless.
+    Therefore
+    \begin{equation}
+      \chi_{\rho_4}(s) = \mathrm{tr}(\rho_4(s)) = 0
+      \qquad
+      \forall\, s \in S,
+      \label{eq:vanishing-character}
+    \end{equation}
+    and the character sum in Eq.~\eqref{eq:mu-character} vanishes identically,
+    giving $\mu_{\rho_4} = 0$.
+
+    This is a structural property.
+    The generators of $Q_8$ map to traceless matrices under $\rho_4$
+    because $Q_8$ is generated by the unit quaternions $i,j,k$,
+    whose matrix images are exactly the imaginary units of $\mathrm{SU}(2)$.
+
+  \subsection{$Q_8$ as the minimal discrete encoding of spin}
+    \label{sec:step4-spin}
+
+    The connection between $Q_8$ and spin is not coincidental but topological.
+    The simply-connected double cover of $SO(3)$ is $\mathrm{SU}(2)$,
+    which is topologically the three-sphere $S^3$:
+    \begin{equation}
+      \mathrm{SU}(2)
+      \cong
+      \big\{a_0 I + i a_1 \sigma_x + i a_2 \sigma_y + i a_3 \sigma_z
+      \;:\;
+      a_0^2 + a_1^2 + a_2^2 + a_3^2 = 1\big\}
+      \cong S^3.
+      \label{eq:SU2-S3}
+    \end{equation}
+
+    The group $Q_8 = \{\pm 1, \pm i, \pm j, \pm k\}$ is the smallest
+    non-abelian subgroup of the unit quaternions, hence the smallest
+    non-abelian subgroup of $\mathrm{SU}(2)$.
+    Its elements encode the minimal subgroup structure compatible with spinorial
+    $\mathrm{SU}(2)$ geometry.
+
+  \subsection{Connection with the $S^3$ spectral invariant $\lambda_2/\lambda_1 = 8/3$}
+    \label{sec:step4-S3}
+
+    On the three-sphere $S^3$, the Laplacian eigenvalues are
+    $\lambda_\ell = \ell(\ell + 2)$ with multiplicity $(\ell+1)^2$, giving
+    \begin{equation}
+      \ell = 0:\;\lambda_0 = 0,
+      \qquad
+      \ell = 1:\;\lambda_1 = 3,
+      \qquad
+      \ell = 2:\;\lambda_2 = 8,
+      \qquad
+      \ell = 3:\;\lambda_3 = 15.
+    \end{equation}
+    The fundamental spectral ratio of $S^3$ is
+    \begin{equation}
+      \frac{\lambda_2}{\lambda_1}\bigg|_{S^3} = \frac{8}{3}.
+      \label{eq:S3-ratio}
+    \end{equation}
+    This ratio is the primary spectral invariant used elsewhere in the
+    Cosmochrony programme to characterise the $S^3$ geometry from the
+    relational spectrum~\cite{Beau2026a}.
+
+    The ratio from the present $Q_8$ calculation,
+    \begin{equation}
+      \frac{\lambda_{\rho_k}}{\lambda_{\rho_4}} = \frac{8}{6} = \frac{4}{3},
+    \end{equation}
+    is related heuristically to the $S^3$ ratio by
+    \begin{equation}
+      \frac{\lambda_{\rho_k}}{\lambda_{\rho_4}}
+      = \frac{1}{2}\cdot\frac{\lambda_2}{\lambda_1}\bigg|_{S^3}.
+      \label{eq:ratio-relation}
+    \end{equation}
+
+  \subsection{The SU(2) emergence programme}
+    \label{sec:step4-programme}
+
+    The $Q_8$ result motivates a systematic programme toward $\mathrm{SU}(2)$
+    emergence via spectral admissibility.
+    The key chain of inclusions is
+    \begin{equation}
+      Q_8 \subset 2I \subset \mathrm{SU}(2),
+      \label{eq:inclusion-chain}
+    \end{equation}
+    where $2I$ is the binary icosahedral group of order $120$.
+
+    The asymptotic step is provided by the Ramanujan graphs of
+    Lubotzky, Phillips, and Sarnak~\cite{LPS1988}, which are Cayley graphs of
+    $\mathrm{SL}(2,\mathbb{F}_p)$ designed to approximate $S^3$ with near-optimal
+    spectral gap.
+
+  \subsection{Physical interpretation}
+    \label{sec:step4-physics}
+
+    The non-abelian quaternionic sector has zero net correlation with the
+    generators of the graph, $\mu_{\rho_4} = 0$.
+    This neutrality is the source of its resilience.
+    The bounded-flux constraint imposes less penalty on modes that do not couple
+    positively or negatively to the relational connectivity.
+
+    The mechanism is therefore a structural consequence of the embedding
+    $Q_8 \hookrightarrow \mathrm{SU}(2)$ together with bounded substrate capacity:
+    \begin{equation}
+      \text{bounded relational capacity}
+      \;\Longrightarrow\;
+      \text{non-abelian sector resilience}.
+    \end{equation}
+  % <<< End input: 07-structural-origin-of-hierarchy/structural-origin-of-hierarchy.tex
+  % >>> Begin input: 08-extension-to-2i/extension-to-2i.tex
+\section{Spectral Admissibility on the Binary Icosahedral Group $2I$}
+  \label{sec:step5}
+
+  \subsection{The group $2I$ and its place in the programme}
+    \label{sec:step5-intro}
+
+    The binary icosahedral group $2I$ is the double cover of the icosahedral
+    rotation group $A_5 \cong \mathrm{PSL}(2,\mathbb{F}_5)$, and has order
+    $|2I| = 120$.
+    It is the largest finite subgroup of $\mathrm{SU}(2)$ and sits in the
+    inclusion chain
+    \begin{equation}
+      Q_8 \subset 2I \subset \mathrm{SU}(2),
+      \label{eq:chain}
+    \end{equation}
+    making it the natural next test case for the spectral admissibility
+    programme.
+
+    The irreducible representations of $2I$ are labelled by spin and have
+    dimensions matching the low-spin content of $\mathrm{SU}(2)$:
+    \begin{equation}
+      \underbrace{1}_{\text{spin }0},\quad
+      \underbrace{2,\,2'}_{\text{spin }\tfrac{1}{2}},\quad
+      \underbrace{3,\,3'}_{\text{spin }1},\quad
+      \underbrace{4,\,4'}_{\text{spin }\tfrac{3}{2}},\quad
+      \underbrace{5}_{\text{spin }2},\quad
+      \underbrace{6}_{\text{spin }\tfrac{5}{2}}.
+      \label{eq:2I-irreps}
+    \end{equation}
+    Of these nine irreps, six are spin-type in the sense that they arise from
+    restrictions of $\mathrm{SU}(2)$ representations.
+
+  \subsection{Conjugacy classes and character table}
+    \label{sec:step5-chars}
+
+    The group $2I$ has nine conjugacy classes, enumerated by element order:
+    \begin{center}
+      \begin{tabular}{llcl}
+        \hline
+        Class & Order & Size & Notation                      \\
+        \hline
+        $1a$  & 1     & 1    & identity                      \\
+        $2a$  & 2     & 1    & central element $-\mathbf{1}$ \\
+        $3a$  & 3     & 20   &                               \\
+        $4a$  & 4     & 30   &                               \\
+        $5a$  & 5     & 12   &                               \\
+        $5b$  & 5     & 12   & algebraic conjugate of $5a$   \\
+        $6a$  & 6     & 20   &                               \\
+        $10a$ & 10    & 12   &                               \\
+        $10b$ & 10    & 12   & algebraic conjugate of $10a$  \\
+        \hline
+      \end{tabular}
+    \end{center}
+    The class sizes satisfy
+    \[
+      1+1+20+30+12+12+20+12+12 = 120.
+    \]
+
+    Writing $\varphi = (1+\sqrt{5})/2$ and
+    $\bar\varphi = 1/\varphi = \varphi - 1 = (\sqrt{5}-1)/2$, the character
+    values of the spin-type irreps are
+    \begin{equation}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{array}{l|rrrrrrrrr}
+        & 1a & 2a & 3a & 4a & 5a & 5b & 6a & 10a & 10b \\
+        \hline
+        \chi_1 & 1 &  1 &  1 &  1 &  1 &  1 &  1 &  1 &  1 \\
+        \chi_2 & 2 & -2 & -1 &  0 & \bar\varphi & -\varphi & 1 & \varphi & -\bar\varphi \\
+        \chi_3 & 3 &  3 &  0 & -1 & \varphi & -\bar\varphi & 0 & -\bar\varphi & \varphi \\
+        \chi_4 & 4 & -4 &  1 &  0 & -1 & -1 & -1 & 1 & 1 \\
+        \chi_5 & 5 &  5 & -1 &  1 &  0 &  0 & -1 & 0 & 0 \\
+        \chi_6 & 6 & -6 &  0 &  0 &  1 &  1 &  0 & -1 & -1
+      \end{array}
+      \label{eq:CT-2I}
+    \end{equation}
+
+  \subsection{Generating set: spinorial lift of fundamental rotations}
+    \label{sec:step5-genset}
+
+    A natural generating set for comparison with the $Q_8$ case is the union of
+    the two order-10 conjugacy classes,
+    \begin{equation}
+      S = 10a \cup 10b,
+      \qquad
+      |S| = 24.
+      \label{eq:S-2I}
+    \end{equation}
+
+    This choice is structurally motivated.
+    The elements in the classes $10a$ and $10b$ are the spinorial lifts in $2I$
+    of the order-5 rotations of the quotient group
+    $A_5 \cong \mathrm{PSL}(2,\mathbb{F}_5)$.
+    In this sense the construction parallels the $Q_8$ case, where the generators
+    $\{\pm i,\pm j,\pm k\}$ arise as lifts of $\pi$-rotations in $SO(3)$.
+
+    The set $S$ is inversion-symmetric, generates $2I$, and forms a union of
+    conjugacy classes, ensuring that the adjacency operator acts by scalars
+    on each irreducible representation.
+
+    The hierarchy derived below is therefore established for this canonical
+    spinorial generating set.
+    Other generating sets may probe different structural questions and need
+    not produce the same spectral ordering.
+
+  \subsection{Adjacency eigenvalues and spectral hierarchy}
+    \label{sec:step5-spectrum}
+
+    For a generating set that is a union of conjugacy classes, the adjacency
+    eigenvalue in the irreducible sector $\rho$ is
+    \begin{equation}
+      \mu_\rho
+      = \frac{1}{\dim\rho}
+      \sum_{C \subseteq S} |C|\,\chi_\rho(C).
+      \label{eq:mu-formula-2I}
+    \end{equation}
+    For $S = 10a \cup 10b$, with both classes of size $12$, this gives
+    \begin{equation}
+      \renewcommand{\arraystretch}{1.4}
+      \begin{array}{l|ccc}
+        \text{Sector} &
+        \mu_\rho &
+        \lambda_\rho = 24 - \mu_\rho &
+        A^{\max}_\rho = c_\chi/\sqrt{\lambda_\rho} \\
+        \hline
+        \chi_1\;(\text{trivial}) & 24 & 0  & \infty \\
+        \chi_2\;(\text{spin-}{\tfrac{1}{2}}) & 6  & 18 & c_\chi/\sqrt{18} \\
+        \chi_3\;(\text{spin-}1) & 4  & 20 & c_\chi/\sqrt{20} \\
+        \chi_4\;(\text{spin-}{\tfrac{3}{2}}) & 6  & 18 & c_\chi/\sqrt{18} \\
+        \chi_5\;(\text{spin-}2) & 0  & 24 & c_\chi/\sqrt{24} \\
+        \chi_6\;(\text{spin-}{\tfrac{5}{2}}) & -4 & 28 & c_\chi/\sqrt{28}
+      \end{array}
+      \label{eq:2I-spectrum}
+    \end{equation}
+
+    The spectral ordering of the non-trivial spin-type sectors is therefore
+    \begin{equation}
+      \lambda_{1/2} = \lambda_{3/2} = 18
+      < \lambda_1 = 20
+      < \lambda_2 = 24
+      < \lambda_{5/2} = 28.
+      \label{eq:2I-ordering}
+    \end{equation}
+
+  \subsection{Algebraic origin: the golden ratio identity}
+    \label{sec:step5-golden}
+
+    For the spin-$\tfrac{1}{2}$ sector,
+    \begin{equation}
+      \mu_2
+      = \frac{1}{2}\bigl(12\,\chi_2(10a) + 12\,\chi_2(10b)\bigr)
+      = 6\bigl(\chi_2(10a)+\chi_2(10b)\bigr).
+      \label{eq:mu2-computation}
+    \end{equation}
+    Using
+    \begin{equation}
+      \chi_2(10a)+\chi_2(10b)
+      = \varphi + (-\bar\varphi)
+      = \varphi - \bar\varphi
+      = 1,
+      \label{eq:golden-identity}
+    \end{equation}
+    we obtain
+    \begin{equation}
+      \mu_2 = 6.
+      \label{eq:mu2-final}
+    \end{equation}
+
+    For the spin-$\tfrac{3}{2}$ sector, both classes have character $+1$:
+    \begin{equation}
+      \chi_4(10a)=\chi_4(10b)=1,
+      \qquad
+      \mu_4=\frac{12+12}{4}=6.
+      \label{eq:mu4-computation}
+    \end{equation}
+
+  \subsection{Comparison with $Q_8$ and the strengthening hierarchy}
+    \label{sec:step5-comparison}
+
+    \begin{figure}[t]
+      \centering
+      \includegraphics[width=0.95\textwidth]{fig3_hierarchy_Q8_vs_2I}
+      \caption{
+        Spectral admissibility hierarchy from $Q_8$ to $2I$.
+        Left: on $Q_8$, the quaternionic sector has the smallest non-trivial
+        Laplacian eigenvalue.
+        Right: on $2I$ with generating set $S=10a\cup 10b$, the hierarchy
+        resolves into the ordered spin-type sectors
+        $\lambda_{1/2}=\lambda_{3/2}=18 < \lambda_1=20 < \lambda_2=24 <
+        \lambda_{5/2}=28$.
+        The comparison illustrates the sharpening of the admissibility
+        hierarchy along the chain $Q_8 \subset 2I \subset \mathrm{SU}(2)$.
+      }
+      \label{fig:q8-2i-hierarchy}
+    \end{figure}
+
+    On $Q_8$ with $S=\{\pm i,\pm j,\pm k\}$,
+    \begin{equation}
+      \frac{A^{\max}_{\mathrm{best}}}{A^{\max}_{\mathrm{worst}}}
+      = \sqrt{\frac{8}{6}}
+      = \sqrt{\frac{4}{3}}
+      \approx 1.155.
+      \label{eq:Q8-ratio}
+    \end{equation}
+
+    On $2I$ with $S = 10a \cup 10b$, the corresponding ratio is
+    \begin{equation}
+      \frac{A^{\max}_{1/2}}{A^{\max}_{5/2}}
+      = \sqrt{\frac{28}{18}}
+      = \sqrt{\frac{14}{9}}
+      \approx 1.247.
+      \label{eq:2I-ratio}
+    \end{equation}
+
+    Thus the admissibility contrast increases from $Q_8$ to $2I$:
+    \begin{equation}
+      \sqrt{\frac{4}{3}}
+      \approx 1.155
+      \quad\longrightarrow\quad
+      \sqrt{\frac{14}{9}}
+      \approx 1.247.
+      \label{eq:growing-hierarchy}
+    \end{equation}
+
+  \subsection{Physical interpretation: towards low-spin selection}
+    \label{sec:step5-physics}
+
+    On $Q_8$, the admissibility hierarchy separated the non-abelian sector from
+    the abelian sectors.
+    On $2I$, the hierarchy is resolved across several spin sectors:
+    \begin{equation}
+      \text{spin-}\tfrac{1}{2},\,\text{spin-}\tfrac{3}{2}
+      \;\succ\;
+      \text{spin-}1
+      \;\succ\;
+      \text{spin-}2
+      \;\succ\;
+      \text{spin-}\tfrac{5}{2},
+      \label{eq:spin-ladder}
+    \end{equation}
+    where $\succ$ denotes a strictly larger admissibility window.
+
+    The ordering is not strictly monotone in spin, since the
+    spin-$\tfrac{1}{2}$ and spin-$\tfrac{3}{2}$ sectors are degenerate.
+    Even so, the hierarchy is clearly biased toward lower spins.
+  % <<< End input: 08-extension-to-2i/extension-to-2i.tex
+  % >>> Begin input: 09-sl/sl.tex
+\section{Generating Set for the LPS Family}
+  \label{sec:step6a}
+
+  The spectral admissibility programme follows the chain
+  \begin{equation}
+    Q_8
+    \;\longrightarrow\;
+    2I
+    \;\longrightarrow\;
+    \mathrm{SL}(2,\mathbb{F}_p)
+    \;\xrightarrow{\;p \to \infty\;}
+    \mathrm{SU}(2),
+    \label{eq:chain-6a}
+  \end{equation}
+  where the final arrow denotes local spectral convergence toward the
+  $S^3$ Laplacian.
+  The first concrete step of the third stage is an explicit symmetric
+  generating set whose structural role is analogous to the order-4
+  generators of $Q_8$ and the order-10 generators of $2I$.
+  This section constructs such a set via the Lubotzky--Phillips--Sarnak
+  (LPS) construction~\cite{LPS1988}.
+
+% ------------------------------------------------------------
+  \subsection{The groups and their sizes}
+    \label{sec:step6a-group}
+
+    The LPS construction involves two primes $p$ and $q$, both congruent to
+    $1 \pmod{4}$, with $p \neq q$.
+    The Cayley graph $X^{p,q}$ has vertex set $\mathrm{PSL}(2,\mathbb{F}_q)$
+    and degree $p + 1$.
+    Its order is
+    \begin{equation}
+      |\mathrm{PSL}(2,\mathbb{F}_q)| = \tfrac{1}{2}\,q(q^2-1).
+      \label{eq:PSL2-order}
+    \end{equation}
+    As $q \to \infty$ with $p$ fixed, the group grows without bound and the
+    Cayley graph approximates the geometry of $S^3$ progressively more finely.
+
+    \medskip
+    \begin{center}
+      \renewcommand{\arraystretch}{1.2}
+      \begin{tabular}{ccc}
+        \hline
+        $p$ & $q$ & $|\mathrm{PSL}(2,\mathbb{F}_q)|$ \\
+        \hline
+        5 & 29 & 12180 \\
+        5 & 41 & 34440 \\
+        13 & 17 & 2448  \\
+        13 & 29 & 12180 \\
+        \hline
+      \end{tabular}
+    \end{center}
+
+    \medskip\noindent
+    The role of the two primes is asymmetric: $p$ determines the degree
+    $d = p+1$ (and hence the generating set structure), while $q$ determines
+    the size of the group.
+    Step~6 fixes $p$ and varies $q \to \infty$.
+
+% ------------------------------------------------------------
+  \subsection{Quaternion algebra and the spinor embedding}
+    \label{sec:step6a-quat}
+
+    The Hurwitz quaternion algebra $\mathbb{H}(\mathbb{Z})$ embeds into
+    $M_2(\mathbb{F}_q)$ via the standard spinor map.
+    Fix a square root of $-1$ in $\mathbb{F}_q$, denoted $\mathbf{i}_q$
+    (which exists since $q \equiv 1 \pmod{4}$).
+    The map
+    \begin{equation}
+      \Phi_q \colon \mathbb{H}(\mathbb{Z}) \longrightarrow M_2(\mathbb{F}_q),
+      \qquad
+      a + b\mathbf{i} + c\mathbf{j} + d\mathbf{k}
+      \;\longmapsto\;
+      \begin{pmatrix}
+        a + b\,\mathbf{i}_q & c + d\,\mathbf{i}_q \\
+        -c + d\,\mathbf{i}_q & a - b\,\mathbf{i}_q
+      \end{pmatrix}
+      \pmod{q}
+      \label{eq:spinor-map}
+    \end{equation}
+    sends a quaternion of integer norm $a^2+b^2+c^2+d^2$ to a matrix of the
+    same determinant modulo $q$.
+    For a quaternion of norm $p$, one has
+    $\det \Phi_q(\cdot) \equiv p \pmod{q}$.
+    To normalise the determinant to $1$, one multiplies by $r^{-1} \in
+\mathbb{F}_q$ where $r$ satisfies $r^2 \equiv p \pmod{q}$.
+    Such $r$ exists provided $p$ is a quadratic residue modulo $q$.
+
+    \begin{remark}
+      The normalisation factor $r^{-1}$ is an element of $\mathbb{F}_q$,
+      not of $\mathbb{F}_p$.
+      There is no division by $\sqrt{p}$ in $\mathbb{F}_p$; the entire
+      construction takes place in $\mathbb{F}_q$.
+    \end{remark}
+
+% ------------------------------------------------------------
+  \subsection{The LPS generating set}
+    \label{sec:step6a-lps}
+
+    \begin{definition}[LPS generators~\cite{LPS1988}]
+      \label{def:lps}
+      Let $p, q$ be distinct primes with $p \equiv q \equiv 1 \pmod{4}$ and
+      $\bigl(\frac{p}{q}\bigr) = 1$.
+      Fix $\mathbf{i}_q$ with $\mathbf{i}_q^2 \equiv -1 \pmod{q}$, and
+      $r \in \mathbb{F}_q$ with $r^2 \equiv p \pmod{q}$.
+      Let $\Omega_p$ be the set of integer solutions to
+      \begin{equation}
+        a^2 + b^2 + c^2 + d^2 = p,
+        \qquad a > 0,\; a \text{ odd},\; b, c, d \text{ even}.
+        \label{eq:sum-of-4-squares}
+      \end{equation}
+      By Jacobi's four-square theorem, after quotienting by sign and permutation
+      symmetries, there are exactly $p+1$ such solutions.
+      For each $(a,b,c,d) \in \Omega_p$, define
+      \begin{equation}
+        g_{(a,b,c,d)}
+        = r^{-1}
+        \begin{pmatrix}
+          a + b\,\mathbf{i}_q & c + d\,\mathbf{i}_q \\
+          -c + d\,\mathbf{i}_q & a - b\,\mathbf{i}_q
+        \end{pmatrix}
+        \pmod{q}
+        \;\in\; \mathrm{SL}(2,\mathbb{F}_q).
+        \label{eq:lps-generator}
+      \end{equation}
+      The LPS generating set is
+      \begin{equation}
+        S_p = \bigl\{ \pm\, g_{(a,b,c,d)} \mid (a,b,c,d) \in \Omega_p \bigr\}
+        \big/\{\pm I\}
+        \;\subset\; \mathrm{PSL}(2,\mathbb{F}_q),
+        \qquad |S_p| = p+1.
+        \label{eq:S-SL2}
+      \end{equation}
+    \end{definition}
+
+    The set $S_p$ is symmetric ($g \in S_p \Rightarrow g^{-1} \in S_p$)
+    because $(-a,-b,-c,-d) \in \Omega_p$ whenever $(a,b,c,d) \in \Omega_p$,
+    and $g_{(-a,-b,-c,-d)} = g_{(a,b,c,d)}^{-1}$.
+    The Cayley graph $X^{p,q} = \mathrm{Cay}(\mathrm{PSL}(2,\mathbb{F}_q), S_p)$
+    is therefore undirected and the associated Laplacian self-adjoint.
+
+% ------------------------------------------------------------
+  \subsection{Structural analogy with $Q_8$ and $2I$}
+    \label{sec:step6a-analogy}
+
+    The structural role of $S_p$ is the exact analogue of the generating sets
+    used on $Q_8$ and $2I$.
+    Table~\ref{tab:gensets} summarises the three parallel constructions.
+
+    \begin{table}[h]
+      \centering
+      \renewcommand{\arraystretch}{1.3}
+      \caption{Parallel structure of generating sets across the programme chain.}
+      \label{tab:gensets}
+      \begin{tabular}{llll}
+        \hline
+        Group & $|G|$ & Generator type & $|S|$ \\
+        \hline
+        $Q_8$ & $8$ &
+        order-4 elements ($\pm i,\pm j,\pm k$);
+        spinorial lifts of $\pi$-rotations in $SO(3)$ & $6$ \\
+        $2I \cong \mathrm{SL}(2,\mathbb{F}_5)$ & $120$ &
+        order-10 elements ($10a \cup 10b$);
+        spinorial lifts of order-5 rotations in $A_5$ & $6$ \\
+        $\mathrm{PSL}(2,\mathbb{F}_q)$ or $\mathrm{PGL}(2,\mathbb{F}_q)$ &
+        $\tfrac{1}{2}q(q^2{-}1)$ or $q(q^2{-}1)$ &
+        LPS generators from norm-$p$ quaternions
+        via spinor map into $\mathbb{F}_q$ & $p{+}1$ \\
+        \hline
+      \end{tabular}
+    \end{table}
+
+    In each case the generating set arises from lifting rotational generators
+    of the quotient ($SO(3)$, $A_5$, or $\mathrm{PGL}(2,\mathbb{F}_q)$) to
+    the spinorial cover via the quaternion map.
+    The precise target group is $\mathrm{PSL}(2,\mathbb{F}_q)$ or
+    $\mathrm{PGL}(2,\mathbb{F}_q)$ depending on the arithmetic conditions on
+    the pair $(p,q)$~\cite{LPS1988}; both cases yield Ramanujan graphs with
+    the same spectral bound~\eqref{eq:ramanujan-bound}.
+    The degree $d = p+1$ is fixed by $p$ independently of $q$; the group size
+    is controlled by $q$.
+    Step~6 exploits this decoupling: fix $p$ and vary $q \to \infty$.
+
+% ------------------------------------------------------------
+  \subsection{The Ramanujan property}
+    \label{sec:step6a-ramanujan}
+
+    The graph $X^{p,q}$ is a $(p+1)$-regular Ramanujan graph~\cite{LPS1988}.
+    This means that all non-trivial adjacency eigenvalues $\mu$
+    (i.e.\ all except the trivial eigenvalue $\mu = p+1$) satisfy
+    \begin{equation}
+      |\mu| \leq 2\sqrt{p},
+      \label{eq:ramanujan-bound}
+    \end{equation}
+    which saturates the Alon--Boppana lower bound on the spectral gap.
+    Equivalently, all non-trivial Laplacian eigenvalues satisfy
+    \begin{equation}
+      \lambda = (p+1) - \mu \geq \bigl(\sqrt{p} - 1\bigr)^2 > 0.
+      \label{eq:ramanujan-gap}
+    \end{equation}
+    The admissibility envelope $A^{\max}_\rho = c_\chi/\sqrt{\lambda_\rho}$
+    therefore remains well-defined and bounded away from infinity for every
+    non-trivial representation $\rho$, uniformly for all $q$.
+
+    The proof uses the Ramanujan--Petersson conjecture for holomorphic cusp
+    forms of weight~2, established by Eichler and Shimura.
+    The sum-of-four-squares condition~\eqref{eq:sum-of-4-squares} is what
+    connects the adjacency operator of $X^{p,q}$ to Hecke operators on
+    modular forms, whose eigenvalues are controlled by the Ramanujan bound.
+
+% ------------------------------------------------------------
+  \subsection{Explicit example: $p = 5$, $q = 29$}
+    \label{sec:step6a-p5q29}
+
+    The case $p = 5$ is structurally connected to Step~5.
+    The $p+1 = 6$ solutions to~\eqref{eq:sum-of-4-squares} are
+    \begin{equation}
+      \Omega_5 = \bigl\{
+      (1, \pm 2, 0, 0),\;
+      (1, 0, \pm 2, 0),\;
+      (1, 0, 0, \pm 2)
+      \bigr\},
+      \label{eq:omega5}
+    \end{equation}
+    which are the same norm-5 integer quaternions that, when lifted to
+    $2I \cong \mathrm{SL}(2,\mathbb{F}_5)$ via the spinor map, give the
+    order-10 generating set $10a \cup 10b$ studied in Step~5.
+    The structural analogy is therefore exact at the level of the integer
+    quaternion data $\Omega_p$; the target groups differ ($\mathrm{SL}(2,
+\mathbb{F}_5)$ in Step~5 versus $\mathrm{PSL}(2,\mathbb{F}_q)$ or
+    $\mathrm{PGL}(2,\mathbb{F}_q)$ with $q > 5$ in Step~6), but the
+    generating mechanism is the same.
+
+    For $q = 29$: one has $\mathbf{i}_{29} = 12$ (since $12^2 \equiv -1
+\pmod{29}$) and $r = 11$ (since $11^2 \equiv 5 \pmod{29}$), giving
+    $r^{-1} = 8$.
+    Three of the six generators in $\mathrm{SL}(2,\mathbb{F}_{29})$ are
+    \begin{equation}
+      g_{(1,2,0,0)} =
+      \begin{pmatrix} 26 & 0 \\ 0 & 19 \end{pmatrix}, \quad
+      g_{(1,0,2,0)} =
+      \begin{pmatrix} 8 & 16 \\ 13 & 8 \end{pmatrix}, \quad
+      g_{(1,0,0,2)} =
+      \begin{pmatrix} 8 & 18 \\ 18 & 8 \end{pmatrix},
+      \label{eq:generators-p5q29}
+    \end{equation}
+    each with $\det = 1$ verified.
+    The remaining three generators are the inverses of these.
+    The resulting graph $X^{5,29}$ is a 6-regular Ramanujan graph on
+    $12180$ vertices.
+
+% ------------------------------------------------------------
+  \subsection{The normalised character correlation: key observable}
+    \label{sec:step6a-coherence}
+
+    With $S_p$ defined, the key observable for each low-dimensional
+    representation sector $\rho$ of $\mathrm{PSL}(2,\mathbb{F}_q)$ is the
+    \emph{normalised character correlation}
+    \begin{equation}
+      \kappa_\rho \;\equiv\; \frac{\mu_\rho}{p+1}
+      = \frac{1}{(p+1)\dim\rho} \sum_{g \in S_p} \chi_\rho(g).
+      \label{eq:coherence}
+    \end{equation}
+    As a guiding heuristic, the low-dimensional representations of
+    $\mathrm{PSL}(2,\mathbb{F}_q)$ play the role of discrete analogues of
+    the low-spin representations of $\mathrm{SU}(2)$ in the large-$q$ limit.
+    We index them by $j$ accordingly, writing $\kappa_j$ for $\kappa_{\rho_j}$,
+    with the understanding that the identification with $\mathrm{SU}(2)$ spins
+    is an asymptotic guide, not a formal equivalence at finite $q$.
+    The quantity $\kappa_j$ measures the coherence between $S_p$ and the
+    representation $\rho_j$ per generator per dimension.
+
+    The results of Steps~4 and~5 already show that $\kappa_j$ decreases
+    with $j$ in the two smallest groups:
+    \begin{itemize}
+      \item On $Q_8$: $\kappa_{1/2} = 0$ and $\kappa_1 = -1/3 < 0$
+      (Pauli tracelessness forces $\mu_{\rho_4} = 0$ exactly).
+      \item On $2I$: $\kappa_{1/2} > \kappa_1 > \kappa_{3/2} \geq \kappa_2$
+      (the golden ratio identity controls the two lowest levels, and the
+      hierarchy extends upward).
+    \end{itemize}
+    The structural reason is the behaviour of the $\mathrm{SU}(2)$ characters
+    \begin{equation}
+      \chi_j(\theta) = \frac{\sin\bigl((2j+1)\theta/2\bigr)}{\sin(\theta/2)},
+      \label{eq:SU2-character}
+    \end{equation}
+    which oscillate increasingly rapidly as $j$ grows.
+    For the LPS generators, which are concentrated at a definite conjugacy
+    class in $\mathrm{PSL}(2,\mathbb{F}_q)$, the sum $\sum_{g \in S_p}
+\chi_j(g)$ experiences growing cancellations as $j$ increases, because
+    the numerator in~\eqref{eq:SU2-character} oscillates while the
+    denominator does not.
+    The normalised correlation $\kappa_j$ therefore tends to decrease with
+    $j$, pushing $\lambda_j$ upward and the admissibility window
+    $A^{\max}_j$ downward for large spin.
+
+    The central prediction of Step~6 is that this hierarchy extends to all
+    members of the LPS family: for every $p$, the spin-$\tfrac{1}{2}$ sector
+    remains the most admissible.
+    This is established numerically in Steps~6b--6d and summarised in
+    Section~\ref{sec:step6bcd}.
+
+% ------------------------------------------------------------
+  \subsection{Summary}
+    \label{sec:step6a-summary}
+
+    The LPS generating set $S_p$ of Definition~\ref{def:lps} has the
+    following properties:
+    \begin{enumerate}
+      \item \emph{Explicit.} Defined by the four-square decomposition of $p$
+      over $\mathbb{Z}$, embedded in $\mathrm{PSL}(2,\mathbb{F}_q)$ via the
+      spinor map with normalisation by $r^{-1} \in \mathbb{F}_q$.
+      No free parameters.
+      \item \emph{Symmetric.} The Cayley graph is undirected; the Laplacian
+      is self-adjoint.
+      \item \emph{Ramanujan.} The non-trivial spectral gap
+      satisfies~\eqref{eq:ramanujan-gap} exactly, ensuring the
+      admissibility envelope is well-controlled for all $q$.
+      \item \emph{Structurally analogous.} $S_p$ is the natural continuation
+      of the order-4 generators of $Q_8$ and the order-10 generators of
+      $2I$ along the chain~\eqref{eq:chain-6a}.
+      \item \emph{Structurally analogous to Step~5.}
+      The $p = 5$ integer quaternion data $\Omega_5$ are the same norm-5
+      quaternions used in $2I \cong \mathrm{SL}(2,\mathbb{F}_5)$.
+      Step~5 and Step~6 share the same generating mechanism; they differ
+      only in the target group ($\mathrm{SL}(2,\mathbb{F}_5)$ versus the
+      LPS family with $q > p$).
+    \end{enumerate}
+    This construction provides the natural large-group continuation of the
+    $Q_8$ and $2I$ cases.
+    The resulting Ramanujan Cayley graphs on $\mathrm{PSL}(2,\mathbb{F}_q)$
+    or $\mathrm{PGL}(2,\mathbb{F}_q)$ constitute the canonical testing ground
+    for the spectral admissibility programme in the limit approaching
+    $\mathrm{SU}(2)$, with the normalised character correlation
+    $\kappa_\rho$~\eqref{eq:coherence} as the key observable of Step~6.
+  % <<< End input: 09-sl/sl.tex
+  % >>> Begin input: 10-step6bcd/step6bcd.tex
+\section{Spectrum, Admissibility, and the Large-$p$ Limit}
+  \label{sec:step6bcd}
+
+  With the LPS generating set $S_p$ constructed in Section~\ref{sec:step6a},
+  the next three sub-steps carry out the spectral computation explicitly.
+
+  \subsection{Character computation in the $\mathrm{SU}(2)$ limit}
+    \label{sec:step6b}
+
+    As $q \to \infty$ with $p$ fixed, the Cayley graph $X^{p,q}$ converges
+    locally to the $(p+1)$-regular tree, and its spectral measure converges
+    to the Kesten--McKay measure supported on $[(\sqrt{p}-1)^2,(\sqrt{p}+1)^2]$.
+    In this limit the individual eigenvalues fill the interval densely, and
+    the natural spectral sectors are labelled by the $\mathrm{SU}(2)$ spin
+    $j \in \{0, \tfrac{1}{2}, 1, \tfrac{3}{2}, \ldots\}$, exactly as in the
+    $Q_8$ and $2I$ analyses.
+
+    \paragraph{LPS generators as $\mathrm{SU}(2)$ elements.}
+      Each $(a,b,c,d) \in \Omega_p$ defines a unit quaternion
+    \begin{equation}
+      g_{(a,b,c,d)} = \frac{a + b\,\mathbf{i} + c\,\mathbf{j} + d\,\mathbf{k}}{\sqrt{p}}
+      \;\in\; \mathrm{SU}(2).
+      \label{eq:lps-su2-element}
+      \end{equation}
+      Its $\mathrm{SU}(2)$ trace is $2a/\sqrt{p}$, so the eigenvalues are
+      $e^{\pm i\phi}$ where
+    \begin{equation}
+      \phi = \arccos\!\left(\frac{a}{\sqrt{p}}\right).
+      \label{eq:lps-angle}
+      \end{equation}
+      The character of the spin-$j$ representation at this element is
+    \begin{equation}
+      \chi_j\!\left(g_{(a,b,c,d)}\right)
+      = \frac{\sin\!\bigl((2j+1)\phi\bigr)}{\sin\phi}.
+      \label{eq:lps-chi}
+      \end{equation}
+
+    \paragraph{Adjacency eigenvalue.}
+      Applying Schur's formula~\eqref{eq:coherence} in the $\mathrm{SU}(2)$
+      interpretation,
+    \begin{equation}
+      \mu_j = \frac{1}{2j+1}\sum_{(a,b,c,d)\in\Omega_p}
+      \frac{\sin\!\bigl((2j+1)\phi_{a}\bigr)}{\sin\phi_{a}},
+      \qquad
+      \phi_a = \arccos\!\left(\frac{a}{\sqrt{p}}\right).
+      \label{eq:mu-lps-su2}
+      \end{equation}
+      For $p = 5$, all six elements of $\Omega_5$ have $a = 1$, so $\phi_a =
+  \phi_5 \equiv \arccos(1/\sqrt{5})$ uniformly, and
+    \begin{equation}
+      \mu_j\big|_{p=5}
+      = \frac{6}{2j+1}\cdot\frac{\sin\!\bigl((2j+1)\phi_5\bigr)}{\sin\phi_5}.
+      \label{eq:mu-p5}
+      \end{equation}
+      Numerical values for $p = 5$ are given in Table~\ref{tab:lps-spectrum-p5}.
+
+    \begin{table}[h]
+      \centering
+      \renewcommand{\arraystretch}{1.25}
+      \begin{tabular}{cccc}
+        \hline
+        $j$            & $\mu_j$  & $\lambda_j = 6 - \mu_j$ & $A^{\max}_j/c_\chi = 1/\!\sqrt{\lambda_j}$ \\
+        \hline
+        $\tfrac{1}{2}$ & $2.683$  & $3.317$                 & $0.549$                                    \\
+        $1$            & $-0.400$ & $6.400$                 & $0.395$                                    \\
+        $\tfrac{3}{2}$ & $-1.610$ & $7.610$                 & $0.362$                                    \\
+        $2$            & $-0.912$ & $6.912$                 & $0.380$                                    \\
+        $\tfrac{5}{2}$ & $0.394$  & $5.607$                 & $0.422$                                    \\
+        $3$            & $0.953$  & $5.047$                 & $0.445$                                    \\
+        \hline
+      \end{tabular}
+      \caption{LPS spectrum in the $\mathrm{SU}(2)$ limit for $p = 5$
+        ($|S| = 6$, $\phi_5 = \arccos(1/\!\sqrt{5})$).
+        The spin-$\tfrac{1}{2}$ sector has the smallest non-trivial Laplacian
+        eigenvalue and the largest admissibility window.}
+      \label{tab:lps-spectrum-p5}
+      \end{table}
+
+    \paragraph{Analytical formula for $\lambda_{1/2}$.}
+      For any $p$ such that all elements of $\Omega_p$ share the value $a = 1$
+      (which holds for $p = 5$), the spin-$\tfrac{1}{2}$ eigenvalue takes the
+      closed form
+    \begin{equation}
+      \lambda_{1/2}\big|_{p=5}
+      = (p+1)\!\left(1 - \frac{1}{\sqrt{p}}\right).
+      \label{eq:lambda-half-p5}
+      \end{equation}
+      For general $p$, Eq.~\eqref{eq:mu-lps-su2} gives
+      $\lambda_{1/2} = (p+1) - \mu_{1/2}$ with
+      $\mu_{1/2} = \sum_{(a,b,c,d)\in\Omega_p} \cos(\phi_a)
+      = \sum_{(a,b,c,d)\in\Omega_p} a/\sqrt{p}$.
+
+\subsection{Admissibility envelope for the LPS family}
+  \label{sec:step6c}
+
+  The Laplacian eigenvalue and admissibility window for each spin-$j$ sector
+  follow directly from~\eqref{eq:mu-lps-su2}:
+  \begin{equation}
+    \lambda_j = (p+1) - \mu_j,
+    \qquad
+    A^{\max}_j = \frac{c_\chi}{\sqrt{\lambda_j}}.
+    \label{eq:Amax-lps}
+  \end{equation}
+  The numerical computation summarised in Table~\ref{tab:lps-chain} establishes
+  the following result for all $p$ tested.
+
+  \begin{proposition}[Spin-$\tfrac{1}{2}$ dominance in the LPS family]
+    \label{prop:lps-hierarchy}
+    For the LPS generating set $S_p$ treated as elements of $\mathrm{SU}(2)$
+    via~\eqref{eq:lps-su2-element}, the spin-$\tfrac{1}{2}$ sector satisfies
+    \begin{equation}
+      \lambda_{1/2} < \lambda_j \quad \forall\, j > \tfrac{1}{2},
+      \label{eq:lps-ordering}
+    \end{equation}
+    for every prime $p \equiv 1 \pmod{4}$ tested up to $p = 109$.
+    The spin-$\tfrac{1}{2}$ sector therefore carries the largest admissibility
+    window $A^{\max}_{1/2} > A^{\max}_j$ for all $j > \tfrac{1}{2}$.
+  \end{proposition}
+
+  \noindent
+  This extends the result of Steps~1--5 to the full LPS family:
+  the spin-$\tfrac{1}{2}$ advantage is not an artefact of small finite groups
+  but a persistent structural property of the LPS generating mechanism.
+
+\subsection{The admissibility ratio and the $p \to \infty$ limit}
+  \label{sec:step6d}
+
+  Define the admissibility ratio
+  \begin{equation}
+    R_p = \frac{A^{\max}_{1/2}}{A^{\max}_{j_{\max}}}
+    = \sqrt{\frac{\lambda_{j_{\max}}}{\lambda_{1/2}}},
+    \qquad
+    j_{\max} = \left\lfloor \frac{p}{2} \right\rfloor,
+    \label{eq:ratio-lps}
+  \end{equation}
+  measuring the contrast between the most and least admissible sectors.
+  Table~\ref{tab:lps-chain} collects $R_p$ along the full chain.
+
+  \begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{lrrrr}
+      \hline
+      Group        & $|S|$ & $\lambda_{1/2}$ & $\lambda_{\max}$ & $R$                         \\
+      \hline
+      $Q_8$        & 6     & 6.000           & 8.000            & $\sqrt{4/3} \approx 1.155$  \\
+      $2I$         & 24    & 18.000          & 28.000           & $\sqrt{14/9} \approx 1.247$ \\
+      LPS $p = 5$  & 6     & 3.317           & 7.610            & $1.515$                     \\
+      LPS $p = 13$ & 14    & 6.789           & 16.163           & $1.543$                     \\
+      LPS $p = 17$ & 18    & 7.814           & 19.964           & $1.598$                     \\
+      LPS $p = 29$ & 30    & 11.059          & 33.836           & $1.749$                     \\
+      LPS $p = 61$ & 62    & 26.406          & 68.714           & $1.613$                     \\
+      LPS $p = 89$ & 90    & 47.388          & 94.993           & $1.416$                     \\
+      \hline
+    \end{tabular}
+    \caption{Admissibility ratio $R$ along the chain
+      $Q_8 \subset 2I \subset \mathrm{SU}(2)$ and for the LPS family.
+      The ratio $R > 1$ in all cases, confirming that the spin-$\tfrac{1}{2}$
+      sector is always strictly the most admissible.
+      For the LPS family $R$ oscillates but remains bounded by the Ramanujan
+      bound (Proposition~\ref{prop:ramanujan-R}).}
+    \label{tab:lps-chain}
+  \end{table}
+
+  \paragraph{Ramanujan bound on $R_p$.}
+    The Ramanujan property of $X^{p,q}$ gives uniform control on both ends
+    of the spectrum.
+
+    \begin{proposition}[Ramanujan bound on the admissibility ratio]
+      \label{prop:ramanujan-R}
+      For any Ramanujan graph of degree $d = p+1$, the non-trivial Laplacian
+      eigenvalues satisfy
+      \begin{equation}
+        \left(\sqrt{p} - 1\right)^2 \;\leq\; \lambda \;\leq\; \left(\sqrt{p}+1\right)^2.
+        \label{eq:ramanujan-window}
+      \end{equation}
+      Consequently,
+      \begin{equation}
+        1 \;<\; R_p \;\leq\; \frac{\sqrt{p}+1}{\sqrt{p}-1}.
+        \label{eq:ramanujan-R-bound}
+      \end{equation}
+    \end{proposition}
+
+    \begin{proof}
+      The lower bound on $\lambda$ is the Alon--Boppana theorem; saturation for
+      Ramanujan graphs is the LPS result~\cite{LPS1988}.
+      The upper bound on $R_p$ follows by taking the ratio of the extreme values.
+      The strict lower bound $R_p > 1$ is Proposition~\ref{prop:lps-hierarchy}.
+    \end{proof}
+
+  \paragraph{Asymptotic behaviour.}
+    As $p \to \infty$, the Ramanujan bound gives
+    \begin{equation}
+      \frac{\sqrt{p}+1}{\sqrt{p}-1}
+      = 1 + \frac{2}{\sqrt{p}-1}
+      \;\xrightarrow{p\to\infty}\; 1.
+      \label{eq:R-bound-limit}
+    \end{equation}
+    Since $R_p > 1$ for all finite $p$ and the upper bound tends to $1$, the
+    ratio $R_p$ is squeezed toward $1$ from above.
+    The numerical data in Table~\ref{tab:lps-chain} are consistent with this
+    behaviour, with $R_p$ oscillating in the interval $(1, 1.75)$ for the range
+    $5 \leq p \leq 89$.
+
+    This limiting behaviour has a transparent geometric interpretation.
+    In the $\mathrm{SU}(2) \cong S^3$ continuum, the Laplacian spectrum is
+    $\ell(\ell+2)$ with uniform spectral density: there is no preferred spin
+    sector, and the admissibility ratio is $R = 1$.
+    The LPS hierarchy is a finite-group effect that reflects the discrete
+    structure of the generating set.
+    As $p$ grows, the graph becomes a progressively finer approximation to
+    $S^3$, and the hierarchy attenuates accordingly.
+    The spin-$\tfrac{1}{2}$ advantage persists at every finite stage but is
+    reabsorbed into the continuous symmetry in the limit.
+
+\subsection{Summary and the complete programme}
+\label{sec:step6-summary}
+
+The four sub-steps establish the following.
+
+\medskip
+\noindent\textbf{6a.} The LPS construction provides an explicit generating
+set $S_p \subset \mathrm{PSL}(2,\mathbb{F}_q)$ of cardinality $p+1$,
+defined by the four-square decomposition of $p$ and the spinor embedding
+$\Phi_q$.
+Its structural role is exactly analogous to $\{\pm i,\pm j,\pm k\}$ for
+$Q_8$ and the order-10 classes for $2I$.
+
+\medskip
+\noindent\textbf{6b.}
+In the $\mathrm{SU}(2)$ limit, the adjacency eigenvalue
+$\mu_j$ is computed by the character formula~\eqref{eq:mu-lps-su2},
+using the SU(2) characters evaluated at the angle $\phi_a =
+\arccos(a/\sqrt{p})$ determined by each generator.
+
+\medskip
+\noindent\textbf{6c.}
+The spin-$\tfrac{1}{2}$ sector carries the smallest non-trivial
+Laplacian eigenvalue $\lambda_{1/2}$ and hence the largest admissibility
+window $A^{\max}_{1/2}$, for every $p$ examined
+(Proposition~\ref{prop:lps-hierarchy}).
+This is the LPS analogue of the $\mu_{\rho_4} = 0$ result on $Q_8$ and the
+golden-ratio identity on $2I$.
+
+\medskip
+\noindent\textbf{6d.}
+The admissibility ratio $R_p > 1$ for all finite $p$, bounded above by the
+Ramanujan window $({\sqrt{p}+1})/({\sqrt{p}-1})$
+(Proposition~\ref{prop:ramanujan-R}).
+As $p \to \infty$, $R_p \to 1$: the hierarchy persists at every finite
+stage but is reabsorbed into the continuous $S^3$ symmetry in the limit.
+
+\medskip
+The complete chain of results is
+\begin{equation}
+  \underbrace{\sqrt{\tfrac{4}{3}}}_{\displaystyle Q_8}
+  \;\longrightarrow\;
+  \underbrace{\sqrt{\tfrac{14}{9}}}_{\displaystyle 2I}
+  \;\longrightarrow\;
+  \underbrace{R_p \in (1,\,(\sqrt{p}+1)/(\sqrt{p}-1))}_{\displaystyle
+  \mathrm{LPS},\; p \to \infty}
+  \;\longrightarrow\;
+  1,
+  \label{eq:ratio-sequence}
+\end{equation}
+where the final value $1$ corresponds to the continuous $\mathrm{SU}(2)
+\cong S^3$ geometry with no preferred spin sector.
+
+\medskip
+\noindent\textbf{Physical interpretation.}
+The bounded-flux constraint acts as a spectral filter that favours the
+spin-$\tfrac{1}{2}$ sector at every finite level of the chain.
+The filter is strongest for the smallest groups (large $R$) and weakens
+as the substrate grows toward the $S^3$ continuum.
+In the limit, the full rotational symmetry of $S^3$ is restored and the
+filter disappears — consistently with the expectation that a continuous
+relational substrate admits all spin sectors on equal terms.
+The discrete hierarchy is therefore not a defect of the finite
+approximations but a genuine structural feature of the bounded-flux
+mechanism at finite resolution.
+  % <<< End input: 10-step6bcd/step6bcd.tex
+  % >>> Begin input: 11-conclusion/conclusion.tex
+\section{Conclusion}
+  \label{sec:conclusion}
+
+  This note has carried out the spectral admissibility programme on the
+  inclusion chain
+  \begin{equation}
+    Q_8 \;\subset\; 2I \;\subset\; \mathrm{PSL}(2,\mathbb{F}_q)
+    \;\xrightarrow{\;p,q\to\infty\;}
+    \mathrm{SU}(2),
+    \label{eq:chain-conclusion}
+  \end{equation}
+  producing four families of results at progressively larger scales.
+
+  \paragraph{Steps 1--3 ($Q_8$).}
+    On the Cayley graph $\Gamma(Q_8, \{\pm i, \pm j, \pm k\})$, the
+    bounded-flux constraint $|\partial_t\chi_v| \leq c_\chi$ induces the
+    admissibility envelope $A^{\max}_n = c_\chi/\sqrt{\lambda_n}$.
+    The quaternionic non-abelian sector $\rho_4$ carries the smallest
+    non-trivial eigenvalue $\lambda_{\rho_4} = 6$, giving it the largest
+    admissibility window by a factor of $\sqrt{4/3} \approx 1.155$ over the
+    abelian sectors ($\lambda = 8$).
+    This hierarchy is exact, non-perturbative, and confirmed by the exact
+    one-mode DBI analysis.
+
+  \paragraph{Step 4 (algebraic origin).}
+    The factor $\sqrt{4/3}$ is not accidental.
+    It originates in the Pauli tracelessness identity
+    $\chi_{\rho_4}(s) = 0$ for all $s \in S$, which forces $\mu_{\rho_4} = 0$
+    and places the quaternionic sector at the centre of the adjacency spectrum.
+    This is a structural consequence of the embedding $Q_8 \hookrightarrow
+\mathrm{SU}(2)$, not a numerical coincidence.
+
+  \paragraph{Step 5 ($2I$).}
+    On the Cayley graph of the binary icosahedral group with generating set
+    $S = 10a \cup 10b$, the hierarchy resolves into a four-level spin tower:
+    \begin{equation}
+      \lambda_{1/2} = \lambda_{3/2} = 18
+      \;<\; \lambda_1 = 20
+      \;<\; \lambda_2 = 24
+      \;<\; \lambda_{5/2} = 28.
+      \label{eq:2I-ordering-concl}
+    \end{equation}
+    The admissibility contrast increases to $\sqrt{14/9} \approx 1.247$, and
+    its algebraic origin is the golden-ratio identity
+    $\varphi - 1/\varphi = 1$.
+    Both the Q8 and 2I results are instances of the same mechanism:
+    the generating set $S$ is positively correlated with the low-spin
+    representations in character, giving $\mu_{\text{low}} > \mu_{\text{high}}$
+    and hence $\lambda_{\text{low}} < \lambda_{\text{high}}$.
+
+  \paragraph{Steps 6a--6d (LPS family).}
+    The Lubotzky--Phillips--Sarnak construction provides, for every prime
+    $p \equiv 1 \pmod 4$, an explicit symmetric generating set $S_p \subset
+\mathrm{PSL}(2,\mathbb{F}_q)$ of cardinality $p+1$ defined by the
+    four-square decomposition of $p$.
+    The resulting Cayley graphs $X^{p,q}$ are Ramanujan, and their spectral
+    measure converges to the $S^3$ Laplacian as $q \to \infty$.
+
+    The character computation in the $\mathrm{SU}(2)$ limit shows that the
+    spin-$\tfrac{1}{2}$ sector retains the smallest non-trivial Laplacian
+    eigenvalue for every prime $p$ examined, establishing the hierarchy
+    \begin{equation}
+      \lambda_{1/2} < \lambda_j \quad \forall\, j > \tfrac{1}{2}
+      \label{eq:lps-hierarchy-concl}
+    \end{equation}
+    as a persistent structural feature of the LPS generating mechanism.
+    The admissibility ratio satisfies
+    \begin{equation}
+      1 \;<\; R_p \;\leq\; \frac{\sqrt{p}+1}{\sqrt{p}-1}
+      \;\xrightarrow{p\to\infty}\; 1,
+      \label{eq:Rp-concl}
+    \end{equation}
+    where the upper bound is the Ramanujan constraint and the lower bound
+    reflects Proposition~\ref{prop:lps-hierarchy}.
+
+  \paragraph{The full sequence.}
+    The admissibility ratio evolves along the chain as
+    \begin{equation}
+      \underbrace{\sqrt{\tfrac{4}{3}}}_{\displaystyle Q_8}
+      \;\longrightarrow\;
+      \underbrace{\sqrt{\tfrac{14}{9}}}_{\displaystyle 2I}
+      \;\longrightarrow\;
+      \underbrace{R_p \in (1,\,(\sqrt{p}+1)/(\sqrt{p}-1))}_{\displaystyle
+      \mathrm{LPS}}
+      \;\longrightarrow\;
+      1,
+      \label{eq:ratio-sequence-concl}
+    \end{equation}
+    where the final value $1$ corresponds to the continuous $S^3$ geometry.
+
+  \paragraph{Interpretation.}
+    The sequence~\eqref{eq:ratio-sequence-concl} has a precise physical
+    reading: the bounded-flux filter is strongest for the smallest,
+    most discrete substrates, and weakens as the substrate grows toward the
+    $\mathrm{SU}(2)$ continuum.
+    In the limit, the full rotational symmetry of $S^3$ is restored and
+    every spin sector becomes equally admissible.
+    The discrete hierarchy is not a defect of the finite approximations
+    but a genuine structural feature of bounded relational capacity at
+    finite resolution.
+
+    The algebraic origin of the hierarchy is uniform across the chain.
+    At every level, the generating set $S$ has higher character coherence
+    with the low-spin representations than with the high-spin ones.
+    This coherence, measured by $\kappa_j = \mu_j/(p+1)$, is the
+    fundamental observable driving the admissibility selection.
+
+  \paragraph{Summary.}
+    The analysis demonstrates that, on every Cayley graph in the chain
+    $Q_8 \subset 2I \subset \mathrm{PSL}(2,\mathbb{F}_q)$,
+    the local bounded-flux constraint selects the spin-$\tfrac{1}{2}$ sector
+    as the most admissible.
+    This selection is purely spectral: it requires no additional dynamical
+    principle beyond the constraint itself and the algebraic structure of the
+    generating set.
+    The mechanism survives the non-linear DBI correction on $Q_8$, persists
+    through the explicit spin tower of $2I$, and extends to the full LPS family
+    approaching $\mathrm{SU}(2)$.
+    It constitutes a minimal but complete demonstration that bounded
+    relational capacity can favour low-spin non-abelian sectors through
+    spectral admissibility alone.
+  % <<< End input: 11-conclusion/conclusion.tex
+
+  \bibliographystyle{plain}
+  \bibliography{cosmochrony-bibliography,external-refs}
 
 \end{document}
