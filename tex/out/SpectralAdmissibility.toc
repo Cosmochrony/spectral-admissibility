@@ -1,0 +1,76 @@
+\contentsline {section}{\numberline {1}Setting and Motivation}{4}{section.1}%
+\contentsline {section}{\numberline {2}The $Q_8$ Cayley Graph}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Adjacency Operator and Graph Laplacian}{4}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Spectral Decomposition via Representation Theory}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Irreducible Representations of $Q_8$}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Eigenvalues of the Adjacency Operator}{5}{subsection.3.2}%
+\contentsline {paragraph}{1D sectors.}{5}{section*.2}%
+\contentsline {paragraph}{2D sector.}{5}{section*.3}%
+\contentsline {subsection}{\numberline {3.3}Summary of the Spectrum}{5}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Bounded-Flux Admissibility Condition}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Setup}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Effective Amplitude and Admissibility Envelope}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Explicit Eigenmodes in the $\rho _4$ Sector}{6}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Basis-Resolved Admissibility}{7}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Weakly Non-linear Modal DBI Reduction}{8}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Non-perturbative DBI Envelope}{10}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Admissibility Hierarchy on the $Q_8$ Cayley Graph}{11}{section.5}%
+\contentsline {section}{\numberline {6}Synthesis: Spectral Filtering by Bounded Flux}{12}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Local Flux Constraint as a Spectral Filter}{12}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}DBI Softening as Dynamical Spectral Filtering}{13}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Conceptual Interpretation}{13}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Beyond the $Q_8$ Toy Model}{13}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Structural Origin of the Admissibility Hierarchy and the SU(2) Emergence Thread}{14}{section.7}%
+\contentsline {subsection}{\numberline {7.1}The ratio $\sqrt {4/3}$ is not accidental}{14}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Why $\mu _{\rho _4} = 0$: character-theoretic argument}{14}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}$Q_8$ as the minimal discrete encoding of spin}{14}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Connection with the $S^3$ spectral invariant $\lambda _2/\lambda _1 = 8/3$}{15}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}The SU(2) emergence programme}{15}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Physical interpretation}{15}{subsection.7.6}%
+\contentsline {section}{\numberline {8}Spectral Admissibility on the Binary Icosahedral Group $2I$}{15}{section.8}%
+\contentsline {subsection}{\numberline {8.1}The group $2I$ and its place in the programme}{15}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Conjugacy classes and character table}{16}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Generating set: spinorial lift of fundamental rotations}{16}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Adjacency eigenvalues and spectral hierarchy}{17}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Algebraic origin: the golden ratio identity}{17}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Comparison with $Q_8$ and the strengthening hierarchy}{17}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Physical interpretation: towards low-spin selection}{18}{subsection.8.7}%
+\contentsline {section}{\numberline {9}Generating Set for the LPS Family}{18}{section.9}%
+\contentsline {subsection}{\numberline {9.1}The groups and their sizes}{18}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Quaternion algebra and the spinor embedding}{19}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}The LPS generating set}{19}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Structural analogy with $Q_8$ and $2I$}{19}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}The Ramanujan property}{20}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Explicit example: $p = 5$, $q = 29$}{20}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}The normalised character correlation: key observable}{20}{subsection.9.7}%
+\contentsline {subsection}{\numberline {9.8}Summary}{21}{subsection.9.8}%
+\contentsline {section}{\numberline {10}Spectrum, Admissibility, and the Large-$p$ Limit}{21}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Character computation in the $\mathrm {SU}(2)$ limit}{22}{subsection.10.1}%
+\contentsline {paragraph}{LPS generators as $\mathrm {SU}(2)$ elements.}{22}{section*.10}%
+\contentsline {paragraph}{Adjacency eigenvalue.}{22}{section*.11}%
+\contentsline {paragraph}{Analytical formula for $\lambda _{1/2}$.}{22}{section*.12}%
+\contentsline {subsection}{\numberline {10.2}Admissibility envelope for the LPS family}{23}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}The admissibility ratio and the $p \to \infty $ limit}{23}{subsection.10.3}%
+\contentsline {paragraph}{Ramanujan bound on $R_p$.}{23}{section*.13}%
+\contentsline {paragraph}{Asymptotic behaviour.}{24}{section*.14}%
+\contentsline {subsection}{\numberline {10.4}Summary and the complete programme}{24}{subsection.10.4}%
+\contentsline {section}{\numberline {11}Spectral Admissibility on the $\mathrm {SU}(3)$ Chain: $\Delta (27)$ and $\Sigma (168)$}{25}{section.11}%
+\contentsline {subsection}{\numberline {11.1}The $\mathrm {SU}(3)$ programme and its parallel with $\mathrm {SU}(2)$}{25}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}$\Delta (27)$ as minimal $\mathrm {SU}(3)$ prototype}{25}{subsection.11.2}%
+\contentsline {subsubsection}{\numberline {11.2.1}Group structure and representations}{25}{subsubsection.11.2.1}%
+\contentsline {subsubsection}{\numberline {11.2.2}Generating set and the $\mu _{\mathbf {3}} = 0$ identity}{25}{subsubsection.11.2.2}%
+\contentsline {subsubsection}{\numberline {11.2.3}Proto-hierarchy on $\Delta (27)$}{26}{subsubsection.11.2.3}%
+\contentsline {subsection}{\numberline {11.3}$\Sigma (168) = \mathrm {PSL}(2,7)$: conjugacy classes and character table}{26}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Generating set $S_{168} = C_4$}{27}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.5}Adjacency eigenvalues and spectral hierarchy}{27}{subsection.11.5}%
+\contentsline {subsection}{\numberline {11.6}Algebraic origin: the identity $\chi _{\mathbf {3}}(C_4) = 1$}{28}{subsection.11.6}%
+\contentsline {subsection}{\numberline {11.7}Admissibility ratio and comparison with the $\mathrm {SU}(2)$ chain}{29}{subsection.11.7}%
+\contentsline {section}{\numberline {12}Conclusion}{29}{section.12}%
+\contentsline {paragraph}{Steps 1--3 ($Q_8$).}{29}{section*.15}%
+\contentsline {paragraph}{Step 4 (algebraic origin).}{29}{section*.16}%
+\contentsline {paragraph}{Step 5 ($2I$).}{29}{section*.17}%
+\contentsline {paragraph}{Steps 6a--6d (LPS family).}{30}{section*.18}%
+\contentsline {paragraph}{Step~7 ($\Delta (27)$ and $\Sigma (168)$).}{30}{section*.19}%
+\contentsline {paragraph}{The full picture.}{30}{section*.20}%
+\contentsline {paragraph}{Interpretation.}{30}{section*.21}%
+\contentsline {paragraph}{Summary.}{31}{section*.22}%
