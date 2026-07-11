@@ -26,12 +26,12 @@ We present the first analytically tractable instance of the spectral admissibili
 programme proposed in the Cosmochrony framework.
 On the undirected Cayley graph of the quaternion group $Q_8$, with generators
 $S=\{\pm i,\pm j,\pm k\}$, a local bounded–flux constraint
-$|\partial_t\chi_v|\le c_\chi$ induces a hierarchy of maximal admissible
+$|\partial_t\chi_v|\le c_{\mathrm{BI}}$ induces a hierarchy of maximal admissible
 mode amplitudes across irreducible spectral sectors.
 
 In the linearised regime, the admissibility bound takes the universal form
 \[
-  A_n^{\max}=\frac{c_\chi}{\sqrt{\lambda_n}},
+  A_n^{\max}=\frac{c_{\mathrm{BI}}}{\sqrt{\lambda_n}},
 \]
 where $\lambda_n$ are the Laplacian eigenvalues of the graph.
 This produces a spectral hierarchy in which the non-abelian sector
@@ -42,7 +42,7 @@ We then perform a weakly nonlinear modal reduction of the discrete
 Dirac–Born–Infeld dynamics and show that the first nonlinear corrections
 preserve this hierarchy.
 Solving the one-mode DBI dynamics exactly on the $Q_8$ graph, we further show
-that the same envelope $A_n^{\max}=c_\chi/\sqrt{\lambda_n}$ coincides with the
+that the same envelope $A_n^{\max}=c_{\mathrm{BI}}/\sqrt{\lambda_n}$ coincides with the
 exact saturation boundary, demonstrating structural stability beyond the
 perturbative regime.
 
@@ -102,7 +102,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \item \textbf{Topological discretisation}: the fibre structure of the non-injective
     projection $\Pi$ organises modes into discrete winding sectors.
     \item \textbf{Bounded-flux filtering}: the saturation bound
-    $|\partial_t \chi| \leq c_\chi$ eliminates modes whose local evolution would
+    $|\partial_t \chi| \leq c_{\mathrm{BI}}$ eliminates modes whose local evolution would
     exceed the substrate's relational capacity.
   \end{enumerate}
   The goal of this note is to make step~2 explicit and calculable on the simplest
@@ -264,7 +264,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
   on the graph, subject to the local bounded-flux constraint
   \begin{equation}
     \label{eq:flux-bound}
-    |\partial_t \chi_v(t)| \leq c_\chi
+    |\partial_t \chi_v(t)| \leq c_{\mathrm{BI}}
     \qquad
     \forall v \in Q_8,
     \ \forall t.
@@ -281,13 +281,13 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
   \end{equation}
   The constraint~\eqref{eq:flux-bound} requires
   \begin{equation}
-    |\omega_n| \cdot a_n \cdot |\psi_n(v)| \leq c_\chi
+    |\omega_n| \cdot a_n \cdot |\psi_n(v)| \leq c_{\mathrm{BI}}
     \qquad
     \forall v \in Q_8.
   \end{equation}
   The binding constraint is at the vertex where $|\psi_n(v)|$ is maximal:
   \begin{equation}
-    |\omega_n| \cdot a_n \cdot \|\psi_n\|_\infty \leq c_\chi.
+    |\omega_n| \cdot a_n \cdot \|\psi_n\|_\infty \leq c_{\mathrm{BI}}.
   \end{equation}
   % <<< End input: 04-bounded-flux-admissibility/001-setup.tex
   % >>> Begin input: 04-bounded-flux-admissibility/002-effective-amplitude-and-admissibility-envelope.tex
@@ -302,7 +302,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     A mode is dynamically admissible in the linearised regime if
     \begin{equation}
       \label{eq:admissibility}
-      |\omega_n| \cdot A_n \leq c_\chi.
+      |\omega_n| \cdot A_n \leq c_{\mathrm{BI}}.
     \end{equation}
   \end{definition}
 
@@ -310,7 +310,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
   maximal admissible effective amplitude is
   \begin{equation}
     \label{eq:envelope}
-    A_n^{\max} = \frac{c_\chi}{\sqrt{\lambda_n}}.
+    A_n^{\max} = \frac{c_{\mathrm{BI}}}{\sqrt{\lambda_n}}.
   \end{equation}
   This defines the admissibility envelope in the $(\lambda_n, A_n)$ plane.
 
@@ -321,7 +321,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
       Admissibility envelope on the $Q_8$ Cayley graph with
       $S=\{\pm i,\pm j,\pm k\}$.
       The maximal effective amplitude
-      $A_n^{\max}=c_\chi/\sqrt{\lambda_n}$
+      $A_n^{\max}=c_{\mathrm{BI}}/\sqrt{\lambda_n}$
       is larger in the quaternionic non-abelian sector
       $\rho_4$ ($\lambda=6$) than in the non-trivial abelian sectors
       ($\lambda=8$), by the factor $\sqrt{4/3}$.
@@ -331,7 +331,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
 
   \begin{remark}
     The linearised dispersion $\omega_n^2 = \lambda_n$ is valid for
-    $A_n \ll c_\chi / \sqrt{\lambda_n}$.
+    $A_n \ll c_{\mathrm{BI}} / \sqrt{\lambda_n}$.
     The non-linear Born--Infeld correction modifies this relation near saturation and
     requires a modal reduction of the DBI action.
     The envelope~\eqref{eq:envelope} should therefore be understood first as the
@@ -435,9 +435,9 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \begin{equation}
       A_{\rho_4}^{\max}
       =
-      \frac{c_\chi}{\sqrt{6}}
+      \frac{c_{\mathrm{BI}}}{\sqrt{6}}
       >
-      \frac{c_\chi}{\sqrt{8}}
+      \frac{c_{\mathrm{BI}}}{\sqrt{8}}
       =
       A_{\rho_k}^{\max},
       \qquad
@@ -447,17 +447,17 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \begin{equation}
       a_{\rho_4}^{\max}
       =
-      \frac{c_\chi}{\sqrt{6}\,\|\psi_{\rho_4}\|_\infty}
+      \frac{c_{\mathrm{BI}}}{\sqrt{6}\,\|\psi_{\rho_4}\|_\infty}
       =
-      \frac{2}{\sqrt{6}}\,c_\chi
-      \approx 0.816\,c_\chi,
+      \frac{2}{\sqrt{6}}\,c_{\mathrm{BI}}
+      \approx 0.816\,c_{\mathrm{BI}},
     \end{equation}
     \begin{equation}
       a_{\rho_k}^{\max}
       =
-      \frac{c_\chi}{\sqrt{8}\,\|\psi_{\rho_k}\|_\infty}
+      \frac{c_{\mathrm{BI}}}{\sqrt{8}\,\|\psi_{\rho_k}\|_\infty}
       =
-      c_\chi,
+      c_{\mathrm{BI}},
       \qquad
       k=1,2,3.
     \end{equation}
@@ -467,7 +467,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
 
   \begin{proof}
     The effective-amplitude statement follows from
-    $A_n^{\max} = c_\chi/\sqrt{\lambda_n}$ together with
+    $A_n^{\max} = c_{\mathrm{BI}}/\sqrt{\lambda_n}$ together with
     $\lambda_{\rho_4} = 6$ and $\lambda_{\rho_k} = 8$.
     The raw-amplitude statement follows from
     $a_n^{\max} = A_n^{\max}/\|\psi_n\|_\infty$, using
@@ -484,7 +484,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \label{eq:dbi-lagrangian}
     L
     =
-    -c_\chi^2 \sum_v \sqrt{1 - \dot{\chi}_v^2/c_\chi^2}
+    -c_{\mathrm{BI}}^2 \sum_v \sqrt{1 - \dot{\chi}_v^2/c_{\mathrm{BI}}^2}
     - \tfrac{1}{2} \sum_{v,w} \chi_v \mathcal{L}_{vw} \chi_w.
   \end{equation}
   For a single eigenmode,
@@ -497,20 +497,20 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \label{eq:exact-mode-lagrangian}
     L_n[q]
     =
-    -c_\chi^2 \sum_v \sqrt{1 - \psi_n(v)^2 \dot{q}^{\,2}/c_\chi^2}
+    -c_{\mathrm{BI}}^2 \sum_v \sqrt{1 - \psi_n(v)^2 \dot{q}^{\,2}/c_{\mathrm{BI}}^2}
     - \tfrac{1}{2}\lambda_n q^2.
   \end{equation}
 
-  Expanding the square root for $|\dot{q}| \ll c_\chi$ gives
+  Expanding the square root for $|\dot{q}| \ll c_{\mathrm{BI}}$ gives
   \begin{equation}
     \label{eq:mode-lagrangian-expansion}
     L_n[q]
     =
     \mathrm{const}
     + \tfrac{1}{2}\dot{q}^{\,2}
-    + \frac{\kappa_n}{8c_\chi^2}\dot{q}^{\,4}
+    + \frac{\kappa_n}{8c_{\mathrm{BI}}^2}\dot{q}^{\,4}
     - \tfrac{1}{2}\lambda_n q^2
-    + \mathcal{O}(c_\chi^{-4}),
+    + \mathcal{O}(c_{\mathrm{BI}}^{-4}),
   \end{equation}
   where
   \begin{equation}
@@ -521,7 +521,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
   \begin{equation}
     \label{eq:weakly-nonlinear-mode-equation}
     \left(
-      1 + \frac{3\kappa_n}{2c_\chi^2}\dot{q}^{\,2}
+      1 + \frac{3\kappa_n}{2c_{\mathrm{BI}}^2}\dot{q}^{\,2}
     \right)\ddot{q}
     + \lambda_n q
     = 0.
@@ -539,7 +539,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \approx
     \lambda_n
     \left(
-      1 - \frac{3\kappa_n\lambda_n a_n^2}{8c_\chi^2}
+      1 - \frac{3\kappa_n\lambda_n a_n^2}{8c_{\mathrm{BI}}^2}
     \right),
   \end{equation}
   or equivalently
@@ -549,7 +549,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \approx
     \sqrt{\lambda_n}
     \left(
-      1 - \frac{3\kappa_n\lambda_n a_n^2}{16c_\chi^2}
+      1 - \frac{3\kappa_n\lambda_n a_n^2}{16c_{\mathrm{BI}}^2}
     \right).
   \end{equation}
   The DBI correction is therefore a softening non-linearity.
@@ -585,7 +585,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \lambda_n
     \left(
       1
-      - \frac{3\lambda_n A_n^2}{8c_\chi^2}
+      - \frac{3\lambda_n A_n^2}{8c_{\mathrm{BI}}^2}
       \frac{\kappa_n}{\|\psi_n\|_\infty^2}
     \right).
   \end{equation}
@@ -610,7 +610,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \approx
     \lambda_n
     \left(
-      1 - \frac{3\lambda_n A_n^2}{8c_\chi^2}
+      1 - \frac{3\lambda_n A_n^2}{8c_{\mathrm{BI}}^2}
     \right)
   \end{equation}
   in both the nontrivial abelian and non-abelian sectors.
@@ -656,9 +656,9 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
   \begin{equation}
     L_n[q]
     =
-    -c_\chi^2
+    -c_{\mathrm{BI}}^2
     \sum_{v\in Q_8}
-    \sqrt{1-\frac{\psi_n(v)^2\dot q^{\,2}}{c_\chi^2}}
+    \sqrt{1-\frac{\psi_n(v)^2\dot q^{\,2}}{c_{\mathrm{BI}}^2}}
     -
     \frac12\lambda_n q^2 .
   \end{equation}
@@ -676,8 +676,8 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \begin{equation}
       L
       =
-      -8c_\chi^2
-      \sqrt{1-\frac{\dot q^{\,2}}{8c_\chi^2}}
+      -8c_{\mathrm{BI}}^2
+      \sqrt{1-\frac{\dot q^{\,2}}{8c_{\mathrm{BI}}^2}}
       -
       \frac12\lambda_n q^2 .
     \end{equation}
@@ -697,9 +697,9 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \begin{equation}
       L
       =
-      -4c_\chi^2
-      \sqrt{1-\frac{\dot q^{\,2}}{4c_\chi^2}}
-      -4c_\chi^2
+      -4c_{\mathrm{BI}}^2
+      \sqrt{1-\frac{\dot q^{\,2}}{4c_{\mathrm{BI}}^2}}
+      -4c_{\mathrm{BI}}^2
       -
       \frac12\lambda_n q^2 .
     \end{equation}
@@ -708,8 +708,8 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \begin{equation}
       L
       =
-      -4c_\chi^2
-      \sqrt{1-\frac{\dot q^{\,2}}{4c_\chi^2}}
+      -4c_{\mathrm{BI}}^2
+      \sqrt{1-\frac{\dot q^{\,2}}{4c_{\mathrm{BI}}^2}}
       -
       \frac12\lambda_n q^2 .
     \end{equation}
@@ -722,8 +722,8 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \begin{equation}
       E
       =
-      4c_\chi^2
-      \frac{1}{\sqrt{1-\frac{\dot q^{\,2}}{4c_\chi^2}}}
+      4c_{\mathrm{BI}}^2
+      \frac{1}{\sqrt{1-\frac{\dot q^{\,2}}{4c_{\mathrm{BI}}^2}}}
       +
       \frac12\lambda_n q^2 .
     \end{equation}
@@ -731,7 +731,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \begin{equation}
       E
       =
-      4c_\chi^2
+      4c_{\mathrm{BI}}^2
       +
       \frac12\lambda_n a_n^2 ,
     \end{equation}
@@ -741,7 +741,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
 
     The DBI square root imposes the kinematic bound
     \begin{equation}
-      |\dot q| < 2c_\chi .
+      |\dot q| < 2c_{\mathrm{BI}} .
     \end{equation}
     Expressed in terms of the field variable,
     \[
@@ -749,7 +749,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \]
     this corresponds exactly to the local flux constraint
     \[
-      |\partial_t \chi_v| \le c_\chi .
+      |\partial_t \chi_v| \le c_{\mathrm{BI}} .
     \]
 
   \subsubsection*{Amplitude bound}
@@ -760,13 +760,13 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
       =
       |\dot q|\,|\psi_n(v)|
       =
-      c_\chi .
+      c_{\mathrm{BI}} .
     \]
     Since $\|\psi_n\|_\infty$ is the maximal value of $|\psi_n(v)|$, this gives
     \begin{equation}
       a_n^{\max}
       =
-      \frac{c_\chi}{\|\psi_n\|_\infty\sqrt{\lambda_n}} .
+      \frac{c_{\mathrm{BI}}}{\|\psi_n\|_\infty\sqrt{\lambda_n}} .
     \end{equation}
     The corresponding effective amplitude
     \[
@@ -776,7 +776,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \begin{equation}
       A_n^{\max}
       =
-      \frac{c_\chi}{\sqrt{\lambda_n}} .
+      \frac{c_{\mathrm{BI}}}{\sqrt{\lambda_n}} .
     \end{equation}
 
   \subsubsection*{Exact admissibility envelope}
@@ -785,7 +785,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \begin{equation}
       A_n^{\max}
       =
-      \frac{c_\chi}{\sqrt{\lambda_n}},
+      \frac{c_{\mathrm{BI}}}{\sqrt{\lambda_n}},
     \end{equation}
     which coincides exactly with the admissibility envelope derived from the
     linear bounded-flux argument.
@@ -810,9 +810,9 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     under the local bounded-flux constraint~\eqref{eq:flux-bound} and linearised
     dispersion, the maximal admissible effective amplitude satisfies
     \begin{equation}
-      A^{\max}_{\rho_4} = \frac{c_\chi}{\sqrt{6}}
+      A^{\max}_{\rho_4} = \frac{c_{\mathrm{BI}}}{\sqrt{6}}
       >
-      \frac{c_\chi}{\sqrt{8}}
+      \frac{c_{\mathrm{BI}}}{\sqrt{8}}
       = A^{\max}_{\rho_k},
       \qquad
       k = 1,2,3.
@@ -843,14 +843,14 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
 
   Proposition~\ref{prop:main}, together with
   Proposition~\ref{prop:basis-resolved}, establishes that, at fixed substrate capacity
-  $c_\chi$, the non-abelian irreducible sector of the quaternion Cayley graph sustains
+  $c_{\mathrm{BI}}$, the non-abelian irreducible sector of the quaternion Cayley graph sustains
   a larger local effective amplitude before violating the bounded-flux constraint,
   even though its raw amplitude bound is lower than that of the nontrivial abelian
   sectors.
 
   In the language of the Cosmochrony programme:
   \begin{itemize}
-    \item The admissibility envelope $A_n^{\max} = c_\chi / \sqrt{\lambda_n}$ defines a
+    \item The admissibility envelope $A_n^{\max} = c_{\mathrm{BI}} / \sqrt{\lambda_n}$ defines a
     geometry of exclusion in the space of relational modes.
     Modes above the envelope are dynamically inadmissible.
     \item The non-abelian sector $\rho_4$ lies below this envelope for a larger
@@ -863,7 +863,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \item In the canonical basis, the weakly non-linear DBI correction again favours
     the non-abelian sector through its smaller eigenvalue.
     \item The exact one-mode DBI analysis shows that the same envelope
-    $A_n^{\max} = c_\chi/\sqrt{\lambda_n}$ remains the true saturation boundary.
+    $A_n^{\max} = c_{\mathrm{BI}}/\sqrt{\lambda_n}$ remains the true saturation boundary.
   \end{itemize}
 
   \begin{remark}[Real field and complex eigenmodes]
@@ -894,7 +894,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
 
     The bounded-flux condition
     \[
-      |\partial_t \chi_v| \le c_\chi
+      |\partial_t \chi_v| \le c_{\mathrm{BI}}
     \]
     acts locally on each vertex of the relational substrate.
 
@@ -904,7 +904,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \]
     the constraint becomes
     \[
-      |\omega_n|\,a_n\,\|\psi_n\|_\infty \le c_\chi.
+      |\omega_n|\,a_n\,\|\psi_n\|_\infty \le c_{\mathrm{BI}}.
     \]
 
     Introducing the effective amplitude
@@ -913,7 +913,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     \]
     yields the admissibility envelope
     \[
-      A_n^{\max} = \frac{c_\chi}{\sqrt{\lambda_n}}.
+      A_n^{\max} = \frac{c_{\mathrm{BI}}}{\sqrt{\lambda_n}}.
     \]
 
     A key consequence is that localisation of the mode does not alter the
@@ -933,7 +933,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
       \lambda_n
       \left(
         1 -
-        \frac{3\lambda_n A_n^2}{8c_\chi^2}
+        \frac{3\lambda_n A_n^2}{8c_{\mathrm{BI}}^2}
       \right).
     \]
 
@@ -976,7 +976,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
     Section~\ref{subsec:nonperturbative-dbi} shows that the admissibility
     envelope
     \[
-      A_n^{\max} = \frac{c_\chi}{\sqrt{\lambda_n}}
+      A_n^{\max} = \frac{c_{\mathrm{BI}}}{\sqrt{\lambda_n}}
     \]
     is not merely a linear approximation.
     It coincides with the exact saturation boundary of the one-mode
@@ -1276,14 +1276,14 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
         \text{Sector} &
         \mu_\rho &
         \lambda_\rho = 24 - \mu_\rho &
-        A^{\max}_\rho = c_\chi/\sqrt{\lambda_\rho} \\
+        A^{\max}_\rho = c_{\mathrm{BI}}/\sqrt{\lambda_\rho} \\
         \hline
         \chi_1\;(\text{trivial}) & 24 & 0  & \infty \\
-        \chi_2\;(\text{spin-}{\tfrac{1}{2}}) & 6  & 18 & c_\chi/\sqrt{18} \\
-        \chi_3\;(\text{spin-}1) & 4  & 20 & c_\chi/\sqrt{20} \\
-        \chi_4\;(\text{spin-}{\tfrac{3}{2}}) & 6  & 18 & c_\chi/\sqrt{18} \\
-        \chi_5\;(\text{spin-}2) & 0  & 24 & c_\chi/\sqrt{24} \\
-        \chi_6\;(\text{spin-}{\tfrac{5}{2}}) & -4 & 28 & c_\chi/\sqrt{28}
+        \chi_2\;(\text{spin-}{\tfrac{1}{2}}) & 6  & 18 & c_{\mathrm{BI}}/\sqrt{18} \\
+        \chi_3\;(\text{spin-}1) & 4  & 20 & c_{\mathrm{BI}}/\sqrt{20} \\
+        \chi_4\;(\text{spin-}{\tfrac{3}{2}}) & 6  & 18 & c_{\mathrm{BI}}/\sqrt{18} \\
+        \chi_5\;(\text{spin-}2) & 0  & 24 & c_{\mathrm{BI}}/\sqrt{24} \\
+        \chi_6\;(\text{spin-}{\tfrac{5}{2}}) & -4 & 28 & c_{\mathrm{BI}}/\sqrt{28}
       \end{array}
       \label{eq:2I-spectrum}
     \end{equation}
@@ -1600,7 +1600,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
       \lambda = (p+1) - \mu \geq \bigl(\sqrt{p} - 1\bigr)^2 > 0.
       \label{eq:ramanujan-gap}
     \end{equation}
-    The admissibility envelope $A^{\max}_\rho = c_\chi/\sqrt{\lambda_\rho}$
+    The admissibility envelope $A^{\max}_\rho = c_{\mathrm{BI}}/\sqrt{\lambda_\rho}$
     therefore remains well-defined and bounded away from infinity for every
     non-trivial representation $\rho$, uniformly for all $q$.
 
@@ -1798,7 +1798,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
       \renewcommand{\arraystretch}{1.25}
       \begin{tabular}{cccc}
         \hline
-        $j$            & $\mu_j$  & $\lambda_j = 6 - \mu_j$ & $A^{\max}_j/c_\chi = 1/\!\sqrt{\lambda_j}$ \\
+        $j$            & $\mu_j$  & $\lambda_j = 6 - \mu_j$ & $A^{\max}_j/c_{\mathrm{BI}} = 1/\!\sqrt{\lambda_j}$ \\
         \hline
         $\tfrac{1}{2}$ & $2.683$  & $3.317$                 & $0.549$                                    \\
         $1$            & $-0.400$ & $6.400$                 & $0.395$                                    \\
@@ -1837,7 +1837,7 @@ $\mathrm{SU}(3)$, $\mathrm{PSL}(2,7)$, $\Sigma(168)$, colour admissibility
   \begin{equation}
     \lambda_j = (p+1) - \mu_j,
     \qquad
-    A^{\max}_j = \frac{c_\chi}{\sqrt{\lambda_j}}.
+    A^{\max}_j = \frac{c_{\mathrm{BI}}}{\sqrt{\lambda_j}}.
     \label{eq:Amax-lps}
   \end{equation}
   The numerical computation summarised in Table~\ref{tab:lps-chain} establishes
@@ -2270,14 +2270,14 @@ $\Delta(27)$ and $\Sigma(168)$}
         \text{Sector} &
         \mu_\rho &
         \lambda_\rho = 42 - \mu_\rho &
-        A^{\max}_\rho = c_\chi/\sqrt{\lambda_\rho} \\
+        A^{\max}_\rho = c_{\mathrm{BI}}/\sqrt{\lambda_\rho} \\
         \hline
         \chi_1\;(\text{trivial}) & 42 & 0  & \infty \\
-        \chi_3\;(\mathbf{3}) & 14 & 28 & c_\chi/\sqrt{28} \\
-        \chi_{\bar 3}\;(\bar{\mathbf{3}}) & 14 & 28 & c_\chi/\sqrt{28} \\
-        \chi_6\;(\mathbf{6}) & 0  & 42 & c_\chi/\sqrt{42} \\
-        \chi_7\;(\mathbf{7}) & -6 & 48 & c_\chi/\sqrt{48} \\
-        \chi_8\;(\mathbf{8}) & 0  & 42 & c_\chi/\sqrt{42} \\
+        \chi_3\;(\mathbf{3}) & 14 & 28 & c_{\mathrm{BI}}/\sqrt{28} \\
+        \chi_{\bar 3}\;(\bar{\mathbf{3}}) & 14 & 28 & c_{\mathrm{BI}}/\sqrt{28} \\
+        \chi_6\;(\mathbf{6}) & 0  & 42 & c_{\mathrm{BI}}/\sqrt{42} \\
+        \chi_7\;(\mathbf{7}) & -6 & 48 & c_{\mathrm{BI}}/\sqrt{48} \\
+        \chi_8\;(\mathbf{8}) & 0  & 42 & c_{\mathrm{BI}}/\sqrt{42} \\
       \end{array}
       \label{eq:sigma168-spectrum-table}
     \end{equation}
@@ -2295,7 +2295,7 @@ $\Delta(27)$ and $\Sigma(168)$}
       \label{prop:sigma168-hierarchy}
       On the Cayley graph $\mathrm{Cay}(\Sigma(168), C_4)$ with generating set
       $S_{168} = C_4$ (the $42$ elements of order~$4$), the bounded-flux admissibility
-      envelope $A^{\max}_\rho = c_\chi/\sqrt{\lambda_\rho}$ satisfies
+      envelope $A^{\max}_\rho = c_{\mathrm{BI}}/\sqrt{\lambda_\rho}$ satisfies
       \begin{equation}
         A^{\max}_{\mathbf{3}} = A^{\max}_{\bar{\mathbf{3}}}
         \;>\;
@@ -2313,7 +2313,7 @@ $\Delta(27)$ and $\Sigma(168)$}
       from formula~\eqref{eq:mu-sigma168} and the character values in
       Table~\eqref{eq:CT-sigma168}.
       The eigenvalue ordering~\eqref{eq:sigma168-ordering} is strict at each level, and since
-      $A^{\max}_\rho = c_\chi/\sqrt{\lambda_\rho}$ is strictly decreasing in $\lambda_\rho$,
+      $A^{\max}_\rho = c_{\mathrm{BI}}/\sqrt{\lambda_\rho}$ is strictly decreasing in $\lambda_\rho$,
       the admissibility ordering~\eqref{eq:sigma168-admissibility} follows immediately.
       The co-admissibility of $\mathbf{3}$ and $\bar{\mathbf{3}}$ follows from
       $\chi_3(C_4) = \chi_{\bar 3}(C_4) = 1$.
@@ -2411,8 +2411,8 @@ $\Delta(27)$ and $\Sigma(168)$}
 
   \paragraph{Steps 1--3 ($Q_8$).}
     On the Cayley graph $\Gamma(Q_8, \{\pm i, \pm j, \pm k\})$, the
-    bounded-flux constraint $|\partial_t\chi_v| \leq c_\chi$ induces the
-    admissibility envelope $A^{\max}_n = c_\chi/\sqrt{\lambda_n}$.
+    bounded-flux constraint $|\partial_t\chi_v| \leq c_{\mathrm{BI}}$ induces the
+    admissibility envelope $A^{\max}_n = c_{\mathrm{BI}}/\sqrt{\lambda_n}$.
     The quaternionic non-abelian sector $\rho_4$ carries the smallest
     non-trivial eigenvalue $\lambda_{\rho_4} = 6$, giving it the largest
     admissibility window by a factor of $\sqrt{4/3} \approx 1.155$ over the
