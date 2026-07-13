@@ -1,5 +1,5 @@
 This repository contains the source of the **Spectral Admissibility 1.0** Cosmochrony paper  
-[*Spectral Admissibility and Non-Abelian Mode Resilience in the Q₈ Cayley Graph under Bounded Flux*](out/SpectralAdmissibility.pdf).
+*Spectral Admissibility and Non-Abelian Mode Resilience in the Q₈ Cayley Graph under Bounded Flux*.
 
 This work develops the first analytically tractable instance of the **spectral admissibility
 programme** within the Cosmochrony framework.
